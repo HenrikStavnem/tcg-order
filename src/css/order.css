@@ -1,0 +1,148 @@
+BODY {
+   background-color: #aaaaaa;
+   /*background-image: url('bg.png');*/
+   background-repeat: no-repeat;
+   background-position: right bottom;
+   background-attachment: fixed;
+   padding-top: 80px;
+   padding-bottom: 400px;
+
+   text-align: center;
+   min-width: 680px; /*680*/
+	height: 100%;
+}
+
+#page {
+   position: relative;
+	width: 680px; /*680*/
+	min-height: 100%;
+	height: auto;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+   padding: 10px;
+
+   background-color: white;
+   box-shadow:0 0px 20px rgba(0, 0, 0, 1);
+}
+
+#table {
+   display: table;
+
+   border-spacing: 2px;
+   border-collapse: separate;
+
+   text-align: left;
+}
+
+#card-cells {
+   float: left;
+}
+
+h1 {
+   font-family: 'Roboto Condensed', sans-serif;
+   font-size: 24px;
+   font-weight: normal;
+}
+
+.table-row {
+	display: table-row;
+   background-color: #eeeeee;
+}
+
+.table-row:nth-child(even) {
+	background-color: #dddddd;
+}
+
+.table-cell {
+   display: table-cell;
+   /*border: 1px solid black;*/
+   margin: 5px;
+   padding: 10px;
+   font-size: 25px;
+   font-family: 'Roboto Condensed', sans-serif;
+   line-height: 25px;
+   vertical-align: middle;
+   text-align: center;
+   border-radius: 10px;
+   width: 70px;
+   overflow: hidden;
+}
+
+.card-cell {
+   background-color: #ff0000;
+   /*border: 1px solid black;*/
+}
+
+#user-cells {
+   float: left;
+}
+
+.user-cell {
+   /*border: 1px solid black;*/
+   height: 40px;
+   background-size: cover;
+   background-position: center;
+}
+.user-cell.duke {
+   background-image: url("../../res/user-images/duke.png");
+}
+.user-cell.hunter {
+   background-image: url("../../res/user-images/hunter.png");
+}
+.user-cell.jolly {
+   background-image: url("../../res/user-images/jolly.png");
+}
+.user-cell.red {
+   background-image: url("../../res/user-images/red.png");
+}
+
+.user-image {
+   width: 50px;
+}
+
+.thumb-container {
+   position: relative;
+   height: 100px;
+   width: 72px;
+   overflow: hidden;
+}
+
+.card-thumb {
+   height: 100px;
+   cursor: grab;
+}
+
+.red-tooltip {
+   position: absolute;
+}
+.ui-helper-hidden-accessible {
+   display:none;
+}
+
+.number-input {
+   width: 100px; //50
+   background-color: #a0d7d7;
+}
+.number-input-left {
+   float: left;
+}
+.number-input-left INPUT {
+   width: 50px;
+   height: 95px;
+   text-align: center;
+   font-size: 25px;
+   font-family: 'Roboto Condensed', sans-serif;
+}
+.number-input-right {
+   float: left;
+   padding-left: 5px;
+}
+.number-input-right INPUT {
+   width: 30px;
+   height: 50px;
+}
+
+.small {
+   font-size: 18px;
+}

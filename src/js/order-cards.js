@@ -1,26 +1,3 @@
-var users = [
-   {
-      id: 2,
-      name: 'Duke',
-      image: 'duke'
-   },
-   {
-      id: 6,
-      name: 'Hunter',
-      image: 'hunter'
-   },
-   {
-      id: 5,
-      name: 'Jolly',
-      image: 'jolly'
-   },
-   {
-      id: 1,
-      name: 'Red',
-      image: 'red'
-   }
-];
-
 var cards = [
    {
       id: 1,
@@ -29,7 +6,7 @@ var cards = [
          {
             id: 1,
             image: '1-001.png',
-            text: 'Play only if you control a Mount.<br />If your hero would be dealt fatal damage this turn, it is dealt damage until it has 1 remaining health instead.',
+            text: 'Play only if you control a Mount.<br />The next time your hero would be dealt fatal damage this turn, it is dealt damage until it has 1 remaining health instead.',
             textBg: 'spell'
          },
          {
@@ -41,14 +18,14 @@ var cards = [
          {
             id: 3,
             image: '1-003.png',
-            text: '<b>Ongoing:</b> Your "Chain Heal" and "Greater Chain Heal" abilites heal double the amount instead.<br />Pay 2, destroy this ability {arrow}<br />Choose a "Chain Heal" or "Greater Chain Heal" from your graveyard and put it into your hand.',
+            text: '<b>Ongoing:</b> Your Chain Heal and Greater Chain Heal abilites heal double the amount instead.<br />Pay 2, destroy this ability {arrow}<br />Search your graveyard for an ability named Chain Heal or Greater Chain Heal and put it into your hand.',
             textBg: 'spell',
             originImage: 'card-images/refs/ch_gch.png'
          },
          {
             id: 4,
             image: '1-004.png',
-            text: 'Attach to target hero or ally and your hero heals it for 10 damage.<br /><b>Ongoing:</b> At the beginning of your turn, destroy Renewing Life and your hero heals 4 damage from attached character.',
+            text: 'Attach to target hero or ally and your hero heals it for 10 damage.<br /><b>Ongoing:</b> At the start of your turn, destroy Renewing Life. If you do, your hero heals 4 damage from attached character.',
             textBg: 'spell'
          },
          {
@@ -90,13 +67,13 @@ var cards = [
          {
             id: 3,
             image: '1-010.png',
-            text: '<b>Night Elf Hero Required</b><br />You pay 1 less to complete quests.<br />Exhaust this ally {arrow} Return target friendly ally to its owners hand.',
+            text: '<b>Night Elf Hero Required</b><br />You pay 1 less to complete quests.<br />{exhaust} {arrow} Return target friendly ally to its owners hand.',
             textBg: 'alliance'
          },
          {
             id: 4,
             image: '1-011.png',
-            text: 'You may exhaust and destroy target worgen ally you control to play Guntrand the Snell instead of paying its cost.<br />You pay 1 less to complete quests.<br />When you complete a quest, you may ready target worgen ally you control.',
+            text: 'You may exhaust and destroy target worgen ally you control to play Guntrand the Schnell instead of paying its cost.<br />You pay 1 less to complete quests.<br />When you complete a quest, you may ready target worgen ally you control.',
             textBg: 'alliance'
          },
          {
@@ -138,9 +115,9 @@ var cards = [
          {
             id: 3,
             image: '1-017.png',
-            text: '<b>Thrown</b><br />When Bad Voodoo Dart deals damage to a hero or ally, attach a Poison ability token to that character called Bad Voodoo Poison with:<br />"<b>Ongoing:</b> At the beginning of your turn, your hero deals 1 shadow damage to attached character".',
+            text: '<b>Thrown</b><br />When Bad Voodoo Dart deals damage to a hero or ally, attach a Poison ability token to that character named Bad Voodoo Poison with:<br />"<b>Ongoing:</b> At the start of your turn, your hero deals 1 shadow damage to attached character".',
             textBg: 'equipment',
-            originImage: 'card-images/refs/none.png'
+            originImage: 'card-images/tokens/bad-voodoo-poison.png'
          },
          {
             id: 4,
@@ -158,20 +135,19 @@ var cards = [
             id: 6,
             image: '1-020.png',
             text: '<b>Thrown</b><br />When your hero deals combat damage with Sentinel Glaive, he may also deal 1 melee damage to up to two other target heroes or allies.',
-            textBg: 'equipment'
+            textBg: 'alliance'
          },
          {
             id: 7,
             image: '1-021.png',
             text: '<b>Goblin Hero Required</b><br />When you play a goblin ally, your hero may deal 2 fire damage to it and a target opposing hero or ally.',
-            textBg: 'equipment'
+            textBg: 'horde'
          },
          {
             id: 8,
             image: '1-022.png',
             text: '<b>Tauren Hero Required</b><br />War Totem costs 2 less to play if you control an Earth Totem<br />War Totem has <b>Assualt 2</b> if you control a Fire Totem.<br />You pay 2 less to strike with War Totem if you control an Air Totem.<br />When you strike with War Totem: If you control a Water Totem, your hero heals 2 damage from target hero or ally.',
-            //text: '<b>Tauren Hero Required</b><br /><ul><li>War Totem costs 2 less to play if you control an Earth Totem</li><li>War Totem has <b>Assualt 2</b> if you control a Fire Totem.</li><li>You pay 2 less to strike with War Totem if you control an Air Totem.</li><li>When you strike with War Totem: If you control a Water Totem, your hero heals 2 damage from target hero or ally.</li></ul>',
-            textBg: 'equipment'
+            textBg: 'horde'
          }
       ]
    },
@@ -245,8 +221,8 @@ var cards = [
          {
             id: 10,
             image: '1-032.png',
-            text: 'Pay 4 {arrow} Flip Jelani. Search your collection for a card named "Fireball", and put it into your hand.',
-            textBack: '{exhaust} {arrow} Jelani deals 1 fire damage for each card in your graveyard named "Fireball" to target ally.',
+            text: 'Pay 4 {arrow} Flip Jelani.<br />Then, search your collection for a card named Fireball, and put it into your hand.',
+            textBack: '{exhaust} {arrow} Jelani deals 1 fire damage for each card in your graveyard named Fireball to target ally.',
             textBg: 'alliance',
             originImage: 'card-images/refs/fireball.png',
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=444'
@@ -275,7 +251,7 @@ var cards = [
          {
             id: 14,
             image: '1-036.png',
-            text: 'Pay 2 {arrow} Flip Lauri&euml.',
+            text: 'Pay 2 {arrow} Flip Letaan.',
             textBack: 'You pay 3 less to strike with weapons you control, if you completed a quest this turn.',
             textBg: 'alliance'
          },
@@ -310,7 +286,7 @@ var cards = [
          {
             id: 19,
             image: '1-041.png',
-            text: 'Pay 4 {arrow} Flip Luthnia.',
+            text: 'Pay 3 {arrow} Flip Luthnia.',
             textBack: 'When you play an ongoing ability, Luthnia may heal 1 damage from target hero or ally.<br /><b>Deckbuilding</b>: You can\'t include Shadow and Holy abilities in your deck, but you can include Druid Restoration abilities.',
             textBg: 'alliance'
          },
@@ -325,7 +301,7 @@ var cards = [
          {
             id: 21,
             image: '1-043.png',
-            text: 'Pay 3 {arrow} Flip the Jolly Pirate. Then, put a 0/1 Parrot Beast ally tokennamed “The Polly Pirate” into play.',
+            text: 'Pay 3 {arrow} Flip the Jolly Pirate. Then, put a 0 {atk-melee} / 1 {hp} Parrot Beast ally token named The Polly Pirate into play.',
             textBack: 'When The Jolly Pirate has Stealth, he also has Assualt 2.',
             textBg: 'alliance',
             originImage: 'card-images/tokens/the-polly-pirate.png',
@@ -333,8 +309,9 @@ var cards = [
          */
          {
             id: 22,
-            image: 'none.png',
-            text: '<b>Venacisca Julietta Evenstar</b><br />Card is not done yet.<br />Power is not done',
+            image: '1-044.png',
+            text: 'Pay 2 to flip Venacisca',
+            textBack: 'Once on your turn: Pay 2, exhaust your weapons {arrow} Ready Venacisca and a target weapon with <b>Thrown</b>.',
             textBg: 'alliance'
          },
          {
@@ -353,9 +330,9 @@ var cards = [
          },
          {
             id: 25,
-            image: 'none.png',
-            text: 'Pay 3 and put 10 damage on Urtham {arrow} Flip Urtham',
-            textBack: 'Your "Chain heal" and "Greater Chain heal" abilities can target the same hero or ally more than once.',
+            image: '1-047.png',
+            text: 'Pay 3, put 10 damage on Urtham {arrow} Flip Urtham',
+            textBack: 'Your Chain heal and Greater Chain heal abilities can target the same hero or ally more than once.',
             textBg: 'alliance',
             originImage: 'card-images/refs/ch_gch.png'
          },
@@ -377,14 +354,14 @@ var cards = [
             id: 28,
             image: '1-050.png',
             text: 'Pay 3 {arrow} Flip Jaenx.',
-            textBack: 'At the start of your turn put a 1/1 Imp demon ally token into play.',
+            textBack: 'At the start of your turn, put a 1 {atk-melee} / 1 {hp} Imp demon ally token into play.',
             textBg: 'alliance',
             originImage: 'card-images/tokens/imp.png',
          },
          {
             id: 29,
             image: '1-051.png',
-            text: 'Pay 4 and destroy two allies in your party {arrow} Flip Wilfred Fizzlebang.<br />Then, put a 10/10 ally demon token named Jaraxxus into play with "Jaraxxus can only be destroyed by fatal damage".',
+            text: 'Pay 4 and destroy two allies in your party {arrow} Flip Wilfred Fizzlebang.<br />Then, put a 10 {atk-melee} / 10 {hp} ally demon token named Jaraxxus into play with "Jaraxxus can only be destroyed by fatal damage".',
             textBack: 'At the start of your turn, Jaraxxus will attack Wilfred unless you pay 2 and destroy an ally you control.',
             textBg: 'alliance',
             originImage: 'card-images/tokens/jaraxxus.png',
@@ -428,14 +405,14 @@ var cards = [
             id: 35,
             image: '1-057.png',
             text: 'Pay 2 {arrow} Flip Varthin.',
-            textBack: 'Pets you control have <bAssault 2</b>.',
+            textBack: 'Pets you control have <b>Assault 2</b>.',
             textBg: 'horde'
          },
          {
             id: 36,
             image: '1-058.png',
             text: 'Pay 3 {arrow} Flip Dann\'thas.',
-            textBack: 'Exhaust Dann\'thas, you pay 1 less to play your next instant Frost ability this turn.',
+            textBack: '{exhaust} {arrow} You pay 1 less to play your next instant Frost ability this turn.',
             textBg: 'horde'
          },
          {
@@ -454,15 +431,16 @@ var cards = [
          },
          {
             id: 39,
-            image: 'none.png',
-            text: '<b>Vanessa Nightsky</b><br />Card is not done yet.<br />Art is missing',
+            image: '1-061.png',
+            text: 'Pay 2 {arrow} Flip Vanessa.',
+            textBack: 'When an ally you control is destroyed, Vanessa may deal 1 shadow damage to target ally.',
             textBg: 'horde'
          },
          {
             id: 40,
             image: '1-062.png',
             text: 'Pay 4 {arrow} Flip Elisa',
-            textBack: 'When a card in your deck refers to the value X. Calculate that value + 1.',
+            textBack: 'When you pay a cost of X, the resulting value X is +1 instead.',
             textBg: 'horde'
          },
          {
@@ -488,8 +466,9 @@ var cards = [
          },
          {
             id: 44,
-            image: 'none.png',
-            text: '<b>Sixsa Wildstorm</b><br />Card is not done yet.<br />Art is missing',
+            image: '1-066.png',
+            text: 'Pay 3 {arrow} Flip Sixsa',
+            textBack: 'When an Air Totem you control is destroyed, you may pay 1. If you do, draw a card.',
             textBg: 'horde'
          },
          {
@@ -558,151 +537,151 @@ var cards = [
       cards: [
          {
             id: 1,
-            image: 'none.png', //1-074
-            text: 'Skipped',
+            image: '1-074.png',
+            text: 'When you play a card, add an Exploration counter.<br />{exhaust}, remove four Exploration counters {arrow} You pay 3 less to play your next card this turn.',
             textBg: 'neutral'
          },
          {
             id: 2,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-075.png',
+            text: 'You pay 1 more to complete quests.<br />When you complete a quest, add an Exploration counter.<br />{exhaust}, remove five Exploration counters {arrow} You pay 10 less to play your next card this turn. ',
             textBg: 'neutral'
          },
          {
             id: 3,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-076.png',
+            text: 'When you play a Northrend <i>(Scourgewar,Wrathgate, or Icecrown)</i> ally, add an Exploration counter.<br />{exhaust}, remove three Explorations counters {arrow} Draw a card. ',
             textBg: 'neutral'
          },
          {
             id: 4,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-077.png',
+            text: 'When a player discards a card, add an Exploration counter.<br />{exhaust}, remove three Exploration counters {arrow} Your hero deals 4 shadow damage to target hero or ally. ',
             textBg: 'neutral'
          },
          {
             id: 5,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-078.png',
+            text: 'When you play a card, add an Exploration counter.<br />{exhaust}, remove three Exploration counters {arrow} Draw three cards, then discard three cards.',
             textBg: 'neutral'
          },
          {
             id: 6,
-            image: 'none.png', //
-            text: '<b>Kamagua</b><br />Skipped',
+            image: '1-079.png',
+            text: 'When you complete a quest, put a token ability into play named Tuskarr Meal with "<b>Ongoing:</b> Attached ally has +1/+1", and attach it to target friendly ally.',
             textBg: 'neutral',
             originImage: 'card-images/tokens/tuskarr-meal.png' // replace with tuskarr meal token
          },
          {
             id: 7,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-080.png',
+            text: 'When you play a card with cost 2 or less, add an Expedition counter.<br />{exhaust}, remove five Expedition counters {arrow} You pay 4 less to complete your next quest this turn. ',
             textBg: 'neutral'
          },
          {
             id: 8,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-081.png',
+            text: 'When you play a card, add an Expedition counter.<br />If you completed a Northrend (Scourgewar, Wrathgate, or Icecrown) quest this turn: {exhaust}, remove three Expedition counters {arrow} Draw a card.',
             textBg: 'neutral'
          },
          {
             id: 9,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-082.png',
+            text: 'When you play an ally, add an Exploration counter.<br />On your turn: Remove three Exploration counters {arrow} Reveal cards from your deck until you find a monster ally and put it into your hand. Then shuffle your deck.',
             textBg: 'neutral'
          },
          {
             id: 10,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-083.png',
+            text: 'You pay 2 more to complete quests.<br />When you complete a quest, draw a card. ',
             textBg: 'neutral'
          },
          {
             id: 11,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-084.png', //
+            text: 'When you complete a quest from Outland <i>(Dark Portal, Outland, Legion, Betrayer, Illidan, Black Temple)</i>, add an Exploration counter.<br />{exhaust}, remove three Exploration counters {arrow} Draw two cards.',
             textBg: 'neutral'
          },
          {
             id: 12,
-            image: 'none.png', //
-            text: '<b>Moonglade</b><br />Skipped',
+            image: '1-085.png',
+            text: 'When you place a resource, add a Portal counter.<br />{exhaust}, remove four portal counters {arrow} Put a 0 {atk-nature} /3 {hp} Portal ally token named Portal to Moonglade into play with "At the start of your turn, destroy this ally and draw two cards."',
             textBg: 'neutral',
-            originImage: 'card-images/refs/none.png' // replace with portal to moonglade token
+            originImage: 'card-images/tokens/portal-to-moonglade.png' // replace with portal to moonglade token
          },
          {
             id: 13,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-086.png',
+            text: 'When you play an ability, add a Tome counter.<br />{exhaust}, remove four Tome counters {arrow} <b>Delve</b>. Draw a card.',
             textBg: 'neutral'
          },
          {
             id: 14,
-            image: 'none.png', //
-            text: 'Skipped',
+            image: '1-087.png',
+            text: 'When you play a totem, add a Spirit counter.<br />{exhaust}, remove three Spirit counters {arrow} Put target totem from your graveyard into play.',
             textBg: 'neutral'
          },
          {
             id: 15,
-            image: 'none.png', //
-            text: '<b>Dreadscar Rift</b><br />Skipped',
+            image: '1-088.png',
+            text: 'When you play a card, add a Fel counter.<br />On your turn: Remove five Fel counters from Dreadscar Rift and destroy an ally you control. If you do, put a 5 {atk-melee} / 5 {hp} Infernal demon ally token into play.',
             textBg: 'neutral',
             originImage: 'card-images/tokens/infernal.png'
          },
          {
             id: 16,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-089.png',
+            text: '<b>Human Hero Required.</b><br />When a card enters your graveyard, add a Memorial counter.<br />{exhaust}, remove three Memorial counters {arrow} Put target card with cost 2 or less from your graveyard into your hand.',
+            textBg: 'alliance'
          },
          {
             id: 17,
-            image: 'none.png', //
-            text: '<b>Grizzly Hills</b><br />Skipped',
-            textBg: 'neutral',
-            originImage: 'card-images/refs/none.png' // replace with silverbrook worgens token
+            image: '1-090.png',
+            text: '<b>Worgen Hero Required</b><br />When you play a card, add an Exploration counter.<br />{exhaust}, remove five Exploration counters {arrow} Put two 1 {atk-melee} / 1 {hp} Silverbrook Worgen token allies into play.',
+            textBg: 'alliance',
+            originImage: 'card-images/refs/silverbrook-worgens.png'
          },
          {
             id: 18,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-091.png',
+            text: '<b>Human Hero Required</b><br />When you complete a quest, add an Exploration counter.<br />{exhaust}, remove two Exploration counters {arrow} You pay 1 less to play allies this turn, to a minimum of 1',
+            textBg: 'alliance'
          },
          {
             id: 19,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-092.png',
+            text: 'When you play a card, add an Exploration counter.<br />{exhaust}, remove 10 Exploration counters {arrow} You pay 2 less to play allies this turn.',
+            textBg: 'alliance'
          },
          {
             id: 20,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-093.png',
+            text: '<b>Blood Elf Hero Required</b><br />Blood Elf allies in your party has +2 Health.<br />When you play an ability, add Mana counters equal to the cost of that ability.<br />At the start of your turn, for each Blood Elf ally you control: Remove a Mana counter. If you can\'t, destroy that ally.',
+            textBg: 'horde'
          },
          {
             id: 21,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-094.png',
+            text: '<b>Undead Hero Required</b><br />When you put an ally into your graveyard, add a Grave counter.<br />Pay 2, remove two Grave counters {arrow} You may play target Undead ally from your graveyard.',
+            textBg: 'horde'
          },
          {
             id: 22,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-095.png',
+            text: '<b>Tauren Hero Required</b><br />If you completed a quest this turn: {exhaust} {arrow} Taurens with an attachment in you party has <b>Assault 1</b> this turn.',
+            textBg: 'horde'
          },
          {
             id: 23,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-096.png',
+            text: 'On you turn: {exhaust}, destroy a Goblin ally in you party {arrow} Draw a card.',
+            textBg: 'horde'
          },
          {
             id: 24,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-097.png',
+            text: 'When you play a card, add an Exploration counter.<br />{exhaust}, remove ten Exploration counters {arrow} Allies you control have <b>Assault 2</b> this turn.',
+            textBg: 'horde'
          }
       ]
    },
@@ -712,63 +691,63 @@ var cards = [
       cards: [
          {
             id: 1,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-098.png', //
+            text: 'Destroy target ready ally in your party. If you do, you may pay X less to play Teron, where X is the cost of that ally, up to 4.<br /><b>Heritage. Hardiness 1.</b><br />Effects from allies in your party, with powers that triggers upon being destroyed, may trigger twice if you choose to.',
+            textBg: 'masterhero'
          },
          {
             id: 2,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-099.png',
+            text: '<b>Alliance Hero Required</b><br />You pay 4 less to play Malfurion if you control three or more attachments.<br /><b>Heritage</b> <i>(Copy the replaced hero\'s power)</i><br />Friendly heroes and allies with an attachment you control have <b>Hardiness 1</b>.',
+            textBg: 'masterhero'
          },
          {
             id: 3,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-100.png',
+            text: '<b>Horde Hero Required</b><br />You pay 4 less to play Sylvanas if you control 3 or more allies. <br /><b>Heritage. Long-Range.</b>Once per turn: Target ally you control has <b>Long-Range</b> this turn.',
+            textBg: 'masterhero'
          },
          {
             id: 4,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-101.png',
+            text: 'You pay 4 less to play Khadgar if you control three or more ongoing abilities.<br /><b>Heritage</b> <i>(Copy the replaced hero\'s power)</i><br />You pay 1 less for each ongoing ability you control up to three, to play abilities to a minimum of 1.',
+            textBg: 'masterhero'
          },
          {
             id: 5,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-102.png',
+            text: '<b>Alliance Hero Required</b><br />You pay 4 less to play Bregolas if you completed two quests this turn.<br /><b>Heritage</b> <i>(Copy the replaced hero\'s power)</i><br />You pay 4 less to strike with weapons.<br />Pay 2 {arrow-white} Play target weapon from your graveyard, paying its cost.',
+            textBg: 'masterhero'
          },
          {
             id: 6,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-103.png',
+            text: '<b>Alliance Hero Required</b><br />You pay 4 less to play Tyrande if your hero healed 4 or more damage this turn.<br /><b>Heritage. Mend 1</b><br />When you put a resource into play face up, Tyrande deals 1 arcane damage to all opposing allies. ',
+            textBg: 'masterhero'
          },
          {
             id: 7,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-104.png', //
+            text: '<b>Alliance or Horde Hero Required</b><br />You pay 4 less to play Valeera if your hero dealt fatal combat damage to an ally this turn.<br /><b>Heritage. Stealth. Assault 2</b><br />Your instant abilities cost 1 less to play on opponents\' turns.',
+            textBg: 'masterhero'
          },
          {
             id: 8,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-105.png', //
+            text: 'You pay 4 less to play Drek\'thar, if you control 3 or more Totems.<br /><b>Heritage</b> <i>(Copy the replaced hero\'s power)</i><br />Once on your turn, you may look at the top card of your deck. You may play that card paying 1 less for each Totem you control.',
+            textBg: 'masterhero'
          },
          {
             id: 9,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-106.png', //
+            text: 'You pay 4 less to play Gul\'dan if your hero dealt 4 or more damage this turn.<br /><b>Heritage</b> <i>(Copy the replaced hero\'s power)</i><br />{exhaust}, destroy an ally in your party {arrow-white} Gul\'dan deals shadow damage to an opposing hero or ally equal to the cost of the destroyed ally and heals damage from himself for each damage dealt this way.',
+            textBg: 'masterhero'
          },
          {
             id: 10,
-            image: 'none.png', //
-            text: 'Skipped',
-            textBg: 'neutral'
+            image: '1-107.png', //
+            text: '<b/>Horde Hero Required</b><br />You pay 4 less to play Grommash, if you exhausted an axe to strike this turn.<br /><b>Heritage. Assault 1.</b><br /><b>First Strike</b> (If this character would deal fatal combat damage to another character, prevent all damage dealt to this character that combat.)',
+            textBg: 'masterhero'
          }
       ]
    },
@@ -797,16 +776,16 @@ var cards = [
          {
             id: 4,
             image: '1-111.png',
-            text: 'Pay 3 to complete this quest.<br /><b>Reward:</b> Draw a card.<br />If you completed a quest called "The Witch\'s Bane" this turn, draw another card.',
+            text: 'Pay 3 to complete this quest.<br /><b>Reward:</b> Draw a card.<br />If you completed a quest named The Witch\'s Bane this turn, draw another card.',
             textBg: 'neutral',
             originImage: 'card-images/1-121.png'
          },
          {
             id: 5,
-            image: 'none.png',
-            text: '<b>Quest &mdash; Espace from Black Rock</b><br />Art is missing.<br />',
+            image: '1-112.png',
+            text: 'Pay 2 to complete this quest.<br /><b>Reward:</b> Draw a card.<br />If you control a location named Blackrock Mountain, draw another card.',
             textBg: 'horde',
-            originImage: 'card-images/refs/none.png' // replace with black rock mountain location
+            originImage: 'card-images/1-075.png'
          },
          {
             id: 6,
@@ -817,7 +796,7 @@ var cards = [
          {
             id: 7,
             image: '1-114.png',
-            text: 'Pay 3 to complete this quest.<br />Reward:</b> Put a 0/4 Beast ally token named Sea Turtle into play with Mount (1) and "{exhaust} {arrow} You pay 3 less to complete your next quest this turn."',
+            text: 'Pay 3 to complete this quest.<br />Reward:</b> Put a 0 {atk-melee} / 4 {hp} Beast ally token named Sea Turtle into play with Mount (1) and "{exhaust} {arrow} You pay 3 less to complete your next quest this turn."',
             textBg: 'neutral',
             originImage: 'card-images/tokens/sea-turtle.png'
          },
@@ -842,27 +821,27 @@ var cards = [
          {
             id: 11,
             image: '1-118.png',
-            text: 'Pay 3 to complete this quest.<br /><b>Reward:</b> Draw a card.<br />You pay 2 less next time you complete a quest called "Razorfen Downs" this turn.',
+            text: 'Pay 3 to complete this quest.<br /><b>Reward:</b> Draw a card.<br />You pay 2 less next time you complete a quest named Razorfen Downs this turn.',
             textBg: 'neutral',
             originImage: 'card-images/1-117.png'
          },
          {
             id: 12,
             image: '1-119.png',
-            text: 'Pay 4  to complete this quest.<br /><b>Reward:</b> When you destroy an ally this turn, draw a card.',
+            text: 'Pay 4  to complete this quest.<br /><b>Reward:</b> Each time a hero or ally you control destroys an opposing ally this turn, draw a card to a maximum of three.',
             textBg: 'neutral'
          },
          {
             id: 13,
             image: '1-120.png',
-            text: 'If there are three or more allies in you party: Pay 3 to complete this quest.<br /><b>Reward:</b> Draw a card. If you control a location called "Arathi Highlands", draw another card.',
+            text: 'If there are three or more allies in you party: Pay 3 to complete this quest.<br /><b>Reward:</b> Draw a card. If you control a location named Arathi Highlands, draw another card.',
             textBg: 'neutral',
-            originImage: 'card-images/refs/none.png' // replace with arathi highlands location
+            originImage: 'card-images/1-074.png'
          },
          {
             id: 14,
             image: '1-121.png',
-            text: 'Pay 1 and remove target ally in a graveyard from the game to complete this quest.<br /><b>Reward:</b> Put an ally from your graveyard, on top of you deck.',
+            text: 'Pay 1 and remove target ally in a graveyard from the game to complete this quest.<br /><b>Reward:</b> Put an ally from your graveyard on top of your deck.',
             textBg: 'neutral'
          },
          {
@@ -874,9 +853,9 @@ var cards = [
          {
             id: 16,
             image: '1-123.png',
-            text: 'Pay 3 and put two damage counters on your hero to complete this quest.<br /><b>Reward:</b> Put a 2/2 Orc Warrior ally token named Black Rock Warrior into play with <b>Ferocity</b> and "This ally can only attack heroes".<br />If you control a location called Black Rock Mountain, draw a card.',
+            text: 'Pay 3 and put two damage counters on your hero to complete this quest.<br /><b>Reward:</b> Put a 2 {atk-melee} / 2 {hp} Orc Warrior ally token named Blackrock Warrior into play with <b>Ferocity</b> and "This ally can only attack heroes".<br />If you control a location named Blackrock Mountain, draw a card.',
             textBg: 'neutral',
-            originImage: 'card-images/refs/none.png' // replace with orc warrior token !! with black rock mountain location!!
+            originImage: 'card-images/refs/black-rock-loc-n-orc.png'
          },
          {
             id: 17,
@@ -916,16 +895,16 @@ var cards = [
       cards: [
          {
             id: 1,
-            image: 'none.png',
+            image: 'tokens/bad-voodoo-poison.png',
             textBg: 'spell',
             originImage: 'card-images/1-017.png',
-            text: '<b>Ongoing:</b> At the beginning of your turn, your hero deals 1 shadow damage to attached character.',
+            text: '<b>Ongoing:</b> At the start of your turn, your hero deals 1 shadow damage to attached character.',
          },
          {
             id: 2,
             image: 'tokens/tuskarr-meal.png',
             textBg: 'spell',
-            originImage: 'card-images/none.png',
+            originImage: 'card-images/1-079.png',
             text: '<b>Ongoing:</b> Attached ally has +1/+1.',
          },
          {
@@ -951,54 +930,67 @@ var cards = [
          },
          {
             id: 6,
-            image: 'none.png',
+            image: 'tokens/falstad.png',
             textBg: 'neutral',
-            text: '<b>Falstad Wildhammer</b>',
+            text: '<b>Ferocity</b>',
             originImage: 'card-images/refs/council-of-three-hammers.png',
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4129'
          },
          {
             id: 7,
-            image: 'refs/none.png',
-            text: '<b>Flame of Azzinoth &mdash; Ferocity',
+            image: 'tokens/flame-of-azzinoth-ferocity.png',
+            text: '<b>Ferocity</b>',
             textBg: 'neutral',
             originImage: 'card-images/refs/warglaive-of-azzinoth-1.png',
          },
          {
             id: 8,
-            image: 'refs/none.png',
-            text: '<b>Flame of Azzinoth &mdash; Protector',
+            image: 'tokens/flame-of-azzinoth-protector.png',
+            text: '<b>Protector</b>',
             textBg: 'neutral',
             originImage: 'card-images/refs/warglaive-of-azzinoth-2.png',
          },
          {
             id: 9,
-            image: 'refs/none.png',
-            text: '<b>Flame of Azzinoth &mdash; Monster',
-            textBg: 'neutral',
+            image: 'tokens/flame-of-azzinoth-monster.png',
+            //text: '<b>Flame of Azzinoth &mdash; Monster',
+            textBg: 'monster',
             originImage: 'card-images/refs/warglaive-of-azzinoth.png',
          },
          {
             id: 10,
+            image: 'tokens/ghoul.png',
+            textBg: 'neutral',
+            //originImage: 'card-images/1-050.png',
+         },
+         {
+            id: 11,
+            image: 'tokens/ghoul-2.png',
+            text: '<i>(Alternate art)</i>',
+            textBg: 'neutral',
+            //originImage: 'card-images/1-050.png',
+         },
+         {
+            id: 12,
             image: 'tokens/imp.png',
             textBg: 'neutral',
             originImage: 'card-images/1-050.png',
          },
          {
-            id: 11,
+            id: 13,
             image: 'tokens/infernal.png',
             textBg: 'neutral',
-            originImage: 'card-images/none.png',
+            originImage: 'card-images/1-088.png',
          },
          {
-            id: 12,
+            id: 14,
             image: 'tokens/jaraxxus.png',
             text: 'Jaraxxus can only be destroyed by fatal damage.',
             textBg: 'neutral',
             originImage: 'card-images/1-051.png'
          },
          {
-            id: 13,
+            id: 15,
             image: 'tokens/mirror.png',
             text: 'If damage would be dealt to your hero, it\'s dealt to a random Mirror or hero you control instead.',
             textBg: 'neutral',
@@ -1006,64 +998,57 @@ var cards = [
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=725'
          },
          {
-            id: 14,
-            image: 'none.png',
-            textBg: 'neutral',
-            text: '<b>Moira Thaurissan</b>',
-            originImage: 'card-images/refs/council-of-three-hammers.png',
-            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4129'
-         },
-         {
-            id: 15,
-            image: 'none.png',
-            textBg: 'neutral',
-            text: '<b>Muradin Bronzebeard</b>',
-            originImage: 'card-images/refs/council-of-three-hammers.png',
-            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4129'
-         },
-         {
             id: 16,
+            image: 'tokens/moira.png',
+            textBg: 'neutral',
+            text: '<b>Mend 5</b>',
+            originImage: 'card-images/refs/council-of-three-hammers.png',
+            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4129'
+         },
+         {
+            id: 17,
+            image: 'tokens/muradin.png',
+            textBg: 'neutral',
+            text: '<b>Protector</b>',
+            originImage: 'card-images/refs/council-of-three-hammers.png',
+            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4129'
+         },
+         {
+            id: 18,
             image: 'tokens/murloc.png',
             textBg: 'monster',
             originImage: 'card-images/refs/murloc-king.png',
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=6760'
          },
          {
-            id: 17,
+            id: 19,
             image: 'tokens/naga.png',
             textBg: 'neutral',
             originImage: 'card-images/refs/naga-summoners.png'
          },
          {
-            id: 18,
+            id: 20,
             image: 'tokens/onyxia.png',
             textBg: 'neutral',
             originImage: 'card-images/refs/nefarian.png',
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4013'
          },
          {
-            id: 19,
-            image: 'tokens/onyxian-whelp.png',
-            textBg: 'neutral',
-            originImage: 'card-images/refs/brood-of-onyxia.png',
-            originUrl: 'http://wow.tcgbrowser.com/#!/search=whelp&raid=true'
-         },
-         {
-            id: 20,
+            id: 21,
             image: 'tokens/portal-to-moonglade.png',
             text: 'At the start of your turn, destroy this ally and draw two cards.',
             textBg: 'neutral',
-            originImage: 'card-images/none.png'
+            originImage: 'card-images/1-085.png'
          },
          {
-            id: 21,
+            id: 22,
             image: 'tokens/red-dragonkin.png',
             textBg: 'neutral',
             originImage: 'card-images/refs/red-dragonkin-summoners.png',
             originUrl: 'http://wow.tcgbrowser.com/#!/search=red+dragonkin+token'
          },
          {
-            id: 22,
+            id: 23,
             image: 'tokens/ringo.png',
             text: 'At the start of your turn, draw a card.',
             textBg: 'neutral',
@@ -1072,34 +1057,23 @@ var cards = [
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=3546'
          },
          {
-            id: 23,
-            image: 'tokens/scarlet-trainee-1.png',
-            text: '<b>Ferocity</b>',
-            textBg: 'neutral',
-            originImage: 'card-images/refs/reinforcements.png',
-            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4643'
-         },
-         {
             id: 24,
-            image: 'tokens/scarlet-trainee-2.png',
-            text: '<b>Ferocity</b>',
-            textBg: 'neutral',
-            originImage: 'card-images/refs/reinforcements.png',
-            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4643'
-         },
-         {
-            id: 25,
             image: 'tokens/sea-turtle.png',
             textBg: 'neutral',
             originImage: 'card-images/1-114.png',
             text: '{exhaust} {arrow} You pay 3 less to complete your next quest.',
          },
          {
-            id: 26,
-            image: 'none.png',
-            text: 'Silverbrook Worgen',
+            id: 25,
+            image: 'tokens/silverbrook-worgen-1.png',
             textBg: 'neutral',
-            originImage: 'card-images/none.png',
+            originImage: 'card-images/1-090.png',
+         },
+         {
+            id: 26,
+            image: 'tokens/silverbrook-worgen-2.png',
+            textBg: 'neutral',
+            originImage: 'card-images/1-090.png',
          },
          /*
          {
@@ -1127,14 +1101,29 @@ var cards = [
          },
          {
             id: 30,
-            image: 'none.png',
-            text: '<b>Treant</b>',
+            image: 'tokens/treant-1.png',
             textBg: 'neutral',
-            originImage: 'card-images/none.png',
+            originImage: 'card-images/refs/treants.png',
             originUrl: 'http://wow.tcgbrowser.com/#!/search=treant+token'
          },
          {
             id: 31,
+            image: 'tokens/treant-2.png',
+            text: '<i>(Alternate art)</i>',
+            textBg: 'neutral',
+            originImage: 'card-images/refs/treants.png',
+            originUrl: 'http://wow.tcgbrowser.com/#!/search=treant+token'
+         },
+         {
+            id: 32,
+            image: 'tokens/treant-ferocity.png',
+            text: '<b>Ferocity</b>',
+            textBg: 'neutral',
+            originImage: 'card-images/refs/force-of-nature.png',
+            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=466'
+         },
+         {
+            id: 33,
             image: 'tokens/twilight-dragonkin.png',
             text: '<b>Twilight Dragonkin</b>',
             textBg: 'neutral',
@@ -1142,15 +1131,7 @@ var cards = [
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4207'
          },
          {
-            id: 32,
-            image: 'none.png',
-            text: '<b>Water Elemental</b>',
-            textBg: 'neutral',
-            //originImage: 'card-images/refs/twilight-citadel.png',
-            //originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4207'
-         },
-         {
-            id: 33,
+            id: 34,
             image: 'tokens/wyrmrest-vanquisher.png',
             textBg: 'neutral',
             text: 'When you place a resource face up, you may draw a card.',
@@ -1158,6 +1139,43 @@ var cards = [
             //originUrl: 'http://wowcards.info/card/wrathgate/en/211/On-Ruby-Wings'
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=3560'
          }
+      ]
+   },
+   {
+      id: 9,
+      name: 'Raid cards',
+      cards: [
+         {
+            id: 1,
+            image: 'tokens/corrupted-blood.png',
+            text: '<b>Ferocity</b>',
+            textBg: 'neutral',
+            //originImage: 'card-images/refs/brood-of-onyxia.png',
+            //originUrl: 'http://wow.tcgbrowser.com/#!/search=whelp&raid=true'
+         },
+         {
+            id: 2,
+            image: 'tokens/onyxian-whelp.png',
+            textBg: 'neutral',
+            originImage: 'card-images/refs/brood-of-onyxia.png',
+            originUrl: 'http://wow.tcgbrowser.com/#!/search=whelp&raid=true'
+         },
+         {
+            id: 3,
+            image: 'tokens/scarlet-trainee-1.png',
+            text: '<b>Ferocity</b>',
+            textBg: 'neutral',
+            originImage: 'card-images/refs/reinforcements.png',
+            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4643'
+         },
+         {
+            id: 4,
+            image: 'tokens/scarlet-trainee-2.png',
+            text: '<b>Ferocity</b>',
+            textBg: 'neutral',
+            originImage: 'card-images/refs/reinforcements.png',
+            originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4643'
+         },
       ]
    }
 ];

@@ -103,7 +103,7 @@ function createTableRow(categoryId, cardId) {
    `;
 
    if (cellCardOriginImage !== undefined) {
-      if (cellCardOriginUrl !== undefined)
+      if (false /*cellCardOriginUrl !== undefined */)
          html = html + `
             <div class="table-cell">
                <div class='thumb-container'>

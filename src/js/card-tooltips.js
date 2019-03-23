@@ -69,6 +69,10 @@ function replaceWithSymbols(text) {
    var result = text;
       result = text.replace(new RegExp('{exhaust}', 'g'), '<img src="res/exhaust.png" alt="exhaust" />');
       result = result.replace(new RegExp('{arrow}', 'g'), '<img src="res/arrow.png" alt="-->" />');
+      result = result.replace(new RegExp('{arrow-white}', 'g'), '<img src="res/arrow-white.png" alt="-->" />');
+      result = result.replace(new RegExp('{hp}', 'g'), '<img src="res/hp.png" alt="HP>" class="extra-icon-nudge" />');
+      result = result.replace(new RegExp('{atk-melee}', 'g'), '<img src="res/atk-melee.png" alt="ATK>" class="extra-icon-nudge" />');
+      result = result.replace(new RegExp('{atk-nature}', 'g'), '<img src="res/atk-nature.png" alt="ATK>" class="extra-icon-nudge" />');
 
       return result;
 }

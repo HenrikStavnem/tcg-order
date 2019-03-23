@@ -9,6 +9,7 @@
    min-height: 100px;
    background-color: #ff0;
    /*line-height: 100px;*/
+   color: #000;
    font-size: 18px;
    font-family: 'Roboto Condensed', sans-serif;
    padding: 10px;
@@ -59,7 +60,17 @@
 
    border: 1px solid #4e5744 !important;
 }
-/*
+.extra.masterhero {
+   background-color: #2e3233;
+   -webkit-box-shadow: inset 0px 0px 10px 10px rgba(23,25,25,1);
+   -moz-box-shadow: inset 0px 0px 10px 10px rgba(23,25,25,1);
+   box-shadow: inset 0px 0px 10px 10px rgba(23,25,25,1);
+
+   border: 1px solid #000 !important;
+}
+.extra.masterhero P {
+    color: #fff !important;
+}
 .extra P {
    display: table-cell;
 	vertical-align: middle;
@@ -67,4 +78,8 @@
    font-size: 18px;
    color: #000000;
 }
-*/
+
+.extra-icon-nudge {
+   position: relative;
+   top: 2px;
+}

@@ -20,7 +20,8 @@ function saveOrder() {
 	} )
     .done(
 		function( data ) {
-			console.log(data);
+            if (debug)
+                console.log(data);
 
          getOrders();
 		}

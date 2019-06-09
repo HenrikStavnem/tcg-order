@@ -23,11 +23,11 @@ function getInputId(btn, e) {
 }
 
 function addInputButtonListeners() {
-   $( ".input-number-field" ).on( "input", function(event) {
+   $( ".input-number-field" ).on( "input", function() {
       saveOrder();
    });
 
-   $( ".input-number-field" ).on( "change", function(event) {
+   $( ".input-number-field" ).on( "change", function() {
       saveOrder();
    });
 

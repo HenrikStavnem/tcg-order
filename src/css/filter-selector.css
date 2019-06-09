@@ -1,0 +1,16 @@
+#filter-selector SELECT {
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 30px;
+    width: 250px;
+}
+
+#filter-selector OPTION{
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-left: 10px;
+}
+
+#filter-selector OPTION.set-all {
+    /* For future set icons */
+}

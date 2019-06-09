@@ -7,44 +7,51 @@ var cards = [
             id: 1,
             image: '1-001.png',
             text: 'Play only if you control a Mount.<br />The next time your hero would be dealt fatal damage this turn, it is dealt damage until it has 1 remaining health instead.',
-            textBg: 'spell'
+            textBg: 'spell',
+            set: 1
          },
          {
             id: 2,
             image: '1-002.png',
             text: 'Your hero heals target hero or ally 4 damage for each totem you control.',
-            textBg: 'spell'
+            textBg: 'spell',
+            set: 2
          },
          {
             id: 3,
             image: '1-003.png',
             text: '<b>Ongoing:</b> Your Chain Heal and Greater Chain Heal abilites heal double the amount instead.<br />Pay 2, destroy this ability {arrow}<br />Search your graveyard for an ability named Chain Heal or Greater Chain Heal and put it into your hand.',
             textBg: 'spell',
-            originImage: 'card-images/refs/ch_gch.png'
+            originImage: 'card-images/refs/ch_gch.png',
+            set: 1
          },
          {
             id: 4,
             image: '1-004.png',
             text: 'Attach to target hero or ally and your hero heals it for 10 damage.<br /><b>Ongoing:</b> At the start of your turn, destroy Renewing Life. If you do, your hero heals 4 damage from attached character.',
-            textBg: 'spell'
+            textBg: 'spell',
+            set: 1
          },
          {
             id: 5,
             image: '1-005.png',
             text: 'Your hero heals 8 damage from target hero or ally. If you control a totem, the target is healed for an additional 4 damage.',
-            textBg: 'spell'
+            textBg: 'spell',
+            set: 1
          },
          {
             id: 6,
             image: '1-006.png',
             text: '<b>Restoration Hero Required</b><br />When Totem of the Spirit enters play, your hero heals 10 damage from target hero or ally.<br />Pay 1, destroy Totem of the Spirit {arrow} Prevent the next 5 damage that would be dealt to target hero or ally this turn.',
-            textBg: 'spell'
+            textBg: 'spell',
+            set: 1
          },
          {
             id: 7,
             image: '1-007.png',
             text: '<b>Restoration Hero Required</b><br />Your hero heals 12 damage from each friendly hero or ally.',
-            textBg: 'spell'
+            textBg: 'spell',
+            set: 1
          }
       ]
    },
@@ -56,7 +63,8 @@ var cards = [
             id: 1,
             image: '1-008.png',
             text: '<b>Paladin or Priest Hero Required</b><br />You pay 1 less to complete quests.<br />When you place a resource face up, your hero may heal 2 damage from target hero or ally.',
-            textBg: 'neutral'
+            textBg: 'neutral',
+            set: 2
          },
          {
             id: 2,

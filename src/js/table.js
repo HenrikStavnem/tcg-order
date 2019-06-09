@@ -1,14 +1,13 @@
 function createTable() {
 
    $('#order-table').html(createTableHtml());
-   //$('#order-table').html(createUserCellsHtml());
 
    createCardTooltips();
+   addRowFilterListeners();
 }
 
 function createTableHtml() {
-   var html = '',
-       cardCells, userCells;
+    var html = '';
 
    html = html + '<div id="table">';
 
@@ -49,21 +48,20 @@ function createTableHeaders() {
 }
 
 function createTableContent() {
-   var html = '',
-       category = '';
+    var html = '';
 
-   cards.forEach(function(category) {
-      var categoryId = category.id;
-      html = html + createCategoryHeadline(category.name);
+    cards.forEach(function(category) {
+        var categoryId = category.id,
+            cards = category.cards;
 
-      var cards = category.cards;
+        html = html + createCategoryHeadline(category.name);;
 
-      cards.forEach(function(card) {
-         html = html + createTableRow(categoryId, card.id);
-      });
-   });
+        cards.forEach(function(card) {
+            html = html + createTableRow(categoryId, card.id);
+        });
+    });
 
-   return html;
+    return html;
 }
 
 function createCategoryHeadline(categoryName) {
@@ -72,12 +70,18 @@ function createCategoryHeadline(categoryName) {
 
 function createTableRow(categoryId, cardId) {
    var html = '',
-       cellCategoryId, cellCardId, cellCardImage, cellCardOriginImage, cellCardOriginUrl;
+       cellCategoryId,
+       cellCardId,
+       cellCardImage,
+       cellCardOriginImage,
+       cellCardOriginUrl,
+       cellCardSet,
+       rowId;
 
    // Getting values
    cards.forEach( function(category) {
-      if (category.id === categoryId) {
-         cellCategoryId = category.id;
+       if (category.id === categoryId) {
+           cellCategoryId = category.id;
 
          category.cards.forEach( function(card) {
             if (card.id === cardId) {
@@ -85,6 +89,7 @@ function createTableRow(categoryId, cardId) {
                cellCardImage = card.image;
                cellCardOriginImage = card.originImage;
                cellCardOriginUrl = card.originUrl;
+               cellCardSet = card.set ? card.set : 0;
             }
             return;
          });
@@ -92,7 +97,9 @@ function createTableRow(categoryId, cardId) {
       }
    });
 
-   html = html + `<div class="table-row">`;
+   rowId = "row-" + cellCategoryId + "-" + cellCardId;
+
+   html = html + `<div class="table-row" id="row-${rowId}" data-set=${cellCardSet}>`;
 
    html = html + `
       <div class="table-cell">
@@ -205,8 +212,7 @@ function updateTableCellData(cardId, userId, cardQuantity, categoryId) {
 function updateCellTotals() {
    var userTotalArray = new Array(),
        cardTotalArray = new Array(),
-       total = 0,
-       testStr = "Yepper";
+       total = 0;
 
    cards.forEach(function(category) {
       var categoryId = category.id;
@@ -293,4 +299,24 @@ function getCellValuesForUser(id) {
    data.push({userId: id, categories: categoryArray});
 
    return JSON.stringify(data);
+}
+
+function addRowFilterListeners() {
+    $('.table-row').on('filterChanged', function(event) {
+        var rowId = event.target.id,
+            row,
+            cardSet;
+
+        if (!rowId == "") {
+            row = $("#" + rowId);
+            cardSet = parseInt(row[0].dataset.set);
+
+            if (cardSet != tableFilter && cardSet != -1 && tableFilter != 0) {
+                row.addClass("hidden");
+            }
+            else {
+                row.removeClass("hidden");
+            }
+        }
+    });
 }

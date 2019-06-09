@@ -1,4 +1,6 @@
-var loggedInUserId = -1;
+var loggedInUserId = -1,
+    tableFilter = 0,
+    debug = false;
 
 // INIT
 $(function() {

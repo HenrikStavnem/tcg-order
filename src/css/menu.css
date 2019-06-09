@@ -46,7 +46,26 @@
 
 .menu-user-image {
    height: 40px;
-   position:absolute;
-   top: 8px;
-   left: 20px;
+   vertical-align: middle;
+}
+
+#menu-content-left {
+    height: 40px;
+    position: absolute;
+    top: 8px;
+    left: 20px;
+}
+
+#menu-content-right {
+    height: 40px;
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    vertical-align: middle;
+}
+
+#menu-content div {
+    height: 40px;
+    vertical-align: middle;
+    display: inline-block;
 }

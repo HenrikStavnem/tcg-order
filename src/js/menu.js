@@ -1,30 +1,34 @@
 function createMenu() {
-   var html = `
-      <div id='menu-content'></div>
-   `;
+    var html = `
+        <div id='menu-content-left'><div id='filter-selector'></div></div>
+        <div id='menu-content-right'></div>
+    `;
 
-   $('#menu').html(html);
+    $('#menu').html(html);
 
-   createMenuLoginField(); // TODO: Move?
+    createMenuLoginField(); // TODO: Move?
+
+    createFilterSelector();
 }
 
 function createMenuLoginField() {
-   var html = `
-      <form action="javascript:void(0);">
-         <input type='text'      id='login-username-input' placeholder='Username' autofocus />
-         <input type='password'  id='login-password-input' placeholder='Password' />
-         <button id='login-btn'>Login</button>
-      </form>
-   `;
+    //<div id='filter-selector'></div>
+    var html = `
+        <form action="javascript:void(0);">
+            <input type='text'      id='login-username-input' placeholder='Username' autocomplete='username' autofocus />
+            <input type='password'  id='login-password-input' placeholder='Password' autocomplete='current-password' />
+            <button id='login-btn'>Login</button>
+        </form>
+    `;
 
-   $('#menu-content').html(html);
+    $('#menu-content-right').html(html);
 
-   $( "#login-btn" ).on( "click", function(event) {
-      var username = $( "#login-username-input" ).val(),
-          password = $( "#login-password-input" ).val();
+    $( "#login-btn" ).on( "click", function(event) {
+        var username = $( "#login-username-input" ).val(),
+            password = $( "#login-password-input" ).val();
 
-      login(username, password);
-   });
+        login(username, password);
+    });
 }
 
 function createMenuLogoutField() {
@@ -43,11 +47,17 @@ function createMenuLogoutField() {
       <img src='res/user-images/${userImg}' alt='' class='menu-user-image' /> ${greeting} ${userName} <button id='logout-btn'>Logout</button>
    `;
 
-   $('#menu-content').html(html);
+   $('#menu-content-right').html(html);
 
    $( "#logout-btn" ).on( "click", function(event) {
       logout();
    });
+
+   /*
+   <div>
+       <div id='filter-selector'></div>
+   </div>
+   */
 }
 
 function createGreeting() {

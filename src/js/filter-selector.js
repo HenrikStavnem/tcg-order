@@ -10,7 +10,11 @@ function createFilterSelector() {
         optionsHtml = optionsHtml + "<option value=" + set.id + " class='set-" + set.ud + "' >" + set.name + "</option>";
     });
 
-    html = `<select id='set-selector'>${optionsHtml}</select>`;
+    html = `
+		<label>
+			Set filter
+			<select id='set-selector'>${optionsHtml}</select>
+		</label>`;
 
     $('#filter-selector').html(html);
 

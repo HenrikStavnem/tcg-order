@@ -45,8 +45,10 @@
 }
 
 .menu-user-image {
-   height: 40px;
-   vertical-align: middle;
+    position: relative;
+    top: -5px;
+    height: 40px;
+    vertical-align: middle;
 }
 
 #menu-content-left {
@@ -54,14 +56,16 @@
     position: absolute;
     top: 8px;
     left: 20px;
+    padding-top: 5px;
 }
 
 #menu-content-right {
     height: 40px;
     position: absolute;
     top: 8px;
-    right: 20px;
+    right: 10px;
     vertical-align: middle;
+    padding-top: 5px;
 }
 
 #menu-content div {

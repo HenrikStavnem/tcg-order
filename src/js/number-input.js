@@ -32,8 +32,6 @@ function addInputButtonListeners() {
    });
 
    $( ".input-number-field" ).on( "blur", function(event) {
-
-      debugger;
       var values = getInputId('add', event),
           value = $('#input-' + values[0] + '-' + values[1] + '-' + values[2]).val();
 

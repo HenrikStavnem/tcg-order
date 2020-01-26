@@ -14,9 +14,11 @@ function createMenu() {
 function createMenuLoginField() {
     //<div id='filter-selector'></div>
     var html = `
-        <form action="javascript:void(0);">
-            <input type='text'      id='login-username-input' placeholder='Username' autocomplete='username' autofocus />
-            <input type='password'  id='login-password-input' placeholder='Password' autocomplete='current-password' />
+        <form action='javascript:void(0);'>
+			<label for='login-username-input'>Username</label>
+            <input type='text' id='login-username-input' placeholder='Username' autocomplete='username' autofocus />
+			<label for='login-password-input'>Password</label>
+            <input type='password' id='login-password-input' placeholder='Password' autocomplete='current-password' />
             <button id='login-btn'>Login</button>
         </form>
     `;

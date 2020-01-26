@@ -1,7 +1,8 @@
 function createFilterSelector() {
     var setList = [
         {name: 'Set 2: Allegiance', id: 2},
-        {name: 'Set 1: Forgotten Heroes', id: 1}
+        {name: 'Set 1: Forgotten Heroes', id: 1},
+        {name: 'Reborn: Into the Mists', id: 99}
     ],
     optionsHtml = "<option value='0' class='set-all'>All sets</option>", // No filter option
     html = "";

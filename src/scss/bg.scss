@@ -1,0 +1,90 @@
+@keyframes spin {
+	from {
+		transform: rotate(360deg);
+	} to {
+		transform: rotate(0deg);
+	}
+}
+
+#bg-container {
+position: fixed;
+right: 0px;
+bottom: 0px;
+
+width: 837px;
+height: 700px;
+}
+
+#bg-top {
+position: absolute;
+top: 0px;
+left: 0px;
+background-image: url("../../res/top-circle.png");
+width: 837px;
+height: 700px;
+}
+
+#bg-large-circle {
+position: absolute;
+top: 90px;
+left: 261px;
+background-image: url("../../res/large-circle-runes.png");
+width: 536px;
+height: 536px;
+
+animation-name: spin;
+animation-duration: 60s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+#bg-side-circle {
+position: absolute;
+top: 196px;
+left: 121px;
+background-image: url("../../res/side-circle-runes.png");
+width: 264px;
+height: 264px;
+
+animation-name: spin;
+animation-duration: 40s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+#bg-inner-circle {
+position: absolute;
+top: 135px;
+left: 306px;
+background-image: url("../../res/inner-circle-runes.png");
+width: 446px;
+height: 446px;
+
+animation-name: spin;
+animation-duration: 140s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+#bg-small-circle {
+position: absolute;
+top: 9px;
+left: 513px;
+background-image: url("../../res/small-circle-runes.png");
+width: 173px;
+height: 173px;
+
+animation-name: spin;
+animation-duration: 88s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+
+#bg-cover-fire-circles {
+position: absolute;
+top: 0px;
+left: 0px;
+background-image: url("../../res/cover-fire-circles.png");
+width: 837px;
+height: 700px;
+}

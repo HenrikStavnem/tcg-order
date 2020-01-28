@@ -52,6 +52,13 @@ var cards = [
             text: '<b>Restoration Hero Required</b><br />Your hero heals 12 damage from each friendly hero or ally.',
             textBg: 'spell',
             set: 1
+         },
+         {
+            id: 8,
+            image: 'reborn-044.png',
+            text: 'This is the test',
+            textBg: 'spell',
+            set: 99
          }
       ]
    },

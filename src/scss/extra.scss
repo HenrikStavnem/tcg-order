@@ -1,0 +1,92 @@
+.tooltip {
+	position: relative;
+	z-index: 100000;
+}
+
+.extra {
+	display: table;
+	width: 286px;
+	min-height: 100px;
+	background-color: #ff0;
+	color: #000;
+	font-size: 18px;
+	font-family: 'Roboto Condensed', sans-serif;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 10px;
+	border: 1px solid #000;
+
+	&.neutral {
+		background-color: #fef6e2;
+		-webkit-box-shadow: inset 0px 0px 10px 10px rgba(240,226,186,1);
+		-moz-box-shadow: inset 0px 0px 10px 10px rgba(240,226,186,1);
+		box-shadow: inset 0px 0px 10px 10px rgba(240,226,186,1);
+		border: 1px solid #6e695f !important;
+	}
+
+	&.spell, &.equipment {
+		background-color: #f8f7fb;
+		-webkit-box-shadow: inset 0px 0px 10px 10px rgba(236,237,246,1);
+		-moz-box-shadow: inset 0px 0px 10px 10px rgba(236,237,246,1);
+		box-shadow: inset 0px 0px 10px 10px rgba(236,237,246,1);
+		border: 1px solid #665974 !important;
+	}
+
+	&.alliance {
+		background-color: #f0f9fe;
+		-webkit-box-shadow: inset 0px 0px 10px 10px rgba(196,212,217,1);
+		-moz-box-shadow: inset 0px 0px 10px 10px rgba(196,212,217,1);
+		box-shadow: inset 0px 0px 10px 10px rgba(196,212,217,1);
+		background-image: url("../../res/tooltip-alliance.png");
+		background-repeat: no-repeat;
+		border: 1px solid #6a6c59 !important;
+	}
+
+	&.horde {
+		background-color: #fae5d9;
+		-webkit-box-shadow: inset 0px 0px 10px 10px rgba(235,213,199,1);
+		-moz-box-shadow: inset 0px 0px 10px 10px rgba(235,213,199,1);
+		box-shadow: inset 0px 0px 10px 10px rgba(235,213,199,1);
+	 
+		background-image: url("../../res/tooltip-horde.png");
+		background-repeat: no-repeat;
+		border: 1px solid #64605c !important;
+	}
+
+	&.monster {
+		background-color: #e5efcd;
+		-webkit-box-shadow: inset 0px 0px 10px 10px rgba(214,225,186,1);
+		-moz-box-shadow: inset 0px 0px 10px 10px rgba(214,225,186,1);
+		box-shadow: inset 0px 0px 10px 10px rgba(214,225,186,1);
+	 
+		border: 1px solid #4e5744 !important;
+	}
+
+	&.masterhero {
+		background-color: #2e3233;
+		-webkit-box-shadow: inset 0px 0px 10px 10px rgba(23,25,25,1);
+		-moz-box-shadow: inset 0px 0px 10px 10px rgba(23,25,25,1);
+		box-shadow: inset 0px 0px 10px 10px rgba(23,25,25,1);
+	 
+		border: 1px solid #000 !important;
+	}
+
+	&.masterhero P {
+		color: #fff !important;
+	}
+
+	P {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 18px;
+		color: #000000;
+	}
+}
+
+.extra-icon-nudge {
+	position: relative;
+	top: 2px;
+}

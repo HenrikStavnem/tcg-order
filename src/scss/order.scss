@@ -47,8 +47,8 @@ BODY {
  }
  
  .table-row {
-	 display: table-row;
-	background-color: #eeeeee;
+	display: table-row;
+	background-color: #eeeeee; 
  }
  
  .table-row.hidden {
@@ -61,7 +61,6 @@ BODY {
  
  .table-cell {
 	display: table-cell;
-	/*border: 1px solid black;*/
 	margin: 5px;
 	padding: 10px;
 	font-size: 25px;
@@ -72,19 +71,13 @@ BODY {
 	border-radius: 10px;
 	width: 70px;
 	overflow: hidden;
- }
- 
- .card-cell {
-	background-color: #ff0000;
-	/*border: 1px solid black;*/
- }
- 
- #user-cells {
+}
+
+#user-cells {
 	float: left;
- }
- 
- .user-cell {
-	/*border: 1px solid black;*/
+}
+
+.user-cell {
 	height: 40px;
 	background-size: cover;
 	background-position: center;

@@ -56,7 +56,7 @@ var cards = [
          {
             id: 8,
             image: 'reborn-044.png',
-            text: 'This is the test',
+            text: 'Reborn card',
             textBg: 'spell',
             set: 99
          }

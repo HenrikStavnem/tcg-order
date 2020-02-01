@@ -1,12 +1,12 @@
-var loggedInUserId = -1,
-    tableFilter = 0,
-    debug = false;
+var	loggedInUserId = -1,
+	tableFilter = 0,
+	debug = false;
 
 // INIT
 $(function() {
-   createTable();
+	createTable();
 
-   createMenu();
+	createMenu();
 
-   getOrders();
+	getOrders();
 });

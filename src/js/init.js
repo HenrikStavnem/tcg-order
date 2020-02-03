@@ -8,5 +8,7 @@ $(function() {
 
 	createMenu();
 
+	createModal();
+
 	getOrders();
 });

@@ -8,7 +8,7 @@ $(function() {
 
 	createMenu();
 
-	createModal();
+	createDialog("Init");
 
 	getOrders();
 });

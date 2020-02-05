@@ -29,39 +29,40 @@ function saveOrder() {
 }
 
 function login(username, password) {
-   $.post( connection, {
+	$.post( connection, {
 		call: 'login',
-      username: username,
-      password: password
+		username: username,
+		password: password
 	} )
-    .done(
+	.done(
 		function( data ) {
-         console.log(data);
+			console.log(data);
 			switch (data) {
-            case '200': doLogin();                 break;
-            case '400': alert("Bad request");      break;
-            case '401': alert("Wrong password");   break;
-            default: alert("Unknown error");       break;
-         }
+				case '200': doLogin();						break;
+				case '400': createDialog('bad-request');	break;
+				case '401': alert("Wrong password");		break;
+				default: alert("Unknown error");			break;
+			}
 		}
 	);
 }
 
 function doLogin() {
-   $.post( connection, {
+	$.post( connection, {
 		call: 'getUserId'
 	} )
-    .done(
+	.done(
 		function( data ) {
-         console.log("UserID: " + data);
+			console.log("UserID: " + data);
 			if (data !== '401') {
-            loggedInUserId = parseInt(data);
-            getOrders();
-            createMenuLogoutField();
-         }
-         else {
-            alert("Cannot get user id; User not logged in");
-         }
+			loggedInUserId = parseInt(data);
+			getOrders();
+			createMenuLogoutField();
+			closeModal();
+		}
+		else {
+			alert("Cannot get user id; User not logged in");
+			}
 		}
 	);
 }

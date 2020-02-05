@@ -21,7 +21,9 @@ function createMenuLoginField() {
             <input type='password' id='login-password-input' placeholder='Password' autocomplete='current-password' />
             <button id='login-btn'>Login</button>
         </form>
-    `;
+	`;
+	
+	html = `<button onClick="createDialog('login')">Login</button>`;
 
     $('#menu-content-right').html(html);
 

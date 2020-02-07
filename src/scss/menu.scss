@@ -1,8 +1,10 @@
+@import "variables/variables";
+
 #menu {
 	position: fixed;
 	left: 0px;
 	top: 0px;
-	height: 55px;
+	height: $menu-height;
 	width: 100%;
 	background-color: #333333;
 	color: #ffffff;

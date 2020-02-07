@@ -1,4 +1,5 @@
 function openModal() {
+	$('body').addClass('scroll-lock');
 	$('#modal').addClass('open');
 	$('#page').addClass('modal-open');
 
@@ -25,8 +26,16 @@ function createDialog(type) {
 				<button id='btn-close-dialog' class='dialog-icon'>X</button>
 			</div>
 			<div class='dialog-content-container'>
-				<div class='dialog-content-illustration'><span>ICON</span></div>
+				<div class='dialog-content-illustration'><div>
+				<svg class="icon">
+					<use xlink:href="#icon-login" />
+				</svg>
+				</div></div>
 				<div class='dialog-content'>${dialog.html}</div>
+			</div>
+			<div class='dialog-footer'>
+				${dialog.negativeBtn ? `<button>${dialog.negativeBtn.title}</button>` : ''}
+				${dialog.positiveBtn ? `<button>${dialog.positiveBtn.title}</button>` : ''}
 			</div>
 		</div>`;
 
@@ -66,9 +75,22 @@ function createLoginDialogSettings() {
 			<label for='login-username-input'>Username</label>
 			<input type='text' id='login-username-input' placeholder='Username' autocomplete='username' autofocus /><br />
 			<label for='login-password-input'>Password</label>
-			<input type='password' id='login-password-input' placeholder='Password' autocomplete='current-password' />
+			<input type='password' id='login-password-input' placeholder='Password' autocomplete='current-password' /><br />
 			<button id='login-btn'>Login</button>
 		</form>`;
+
+		//<button id='login-btn'>Login</button>
 	
-		return {title: title, html: html, accent: 'accent-normal'};
+		return {
+			title: title,
+			html: html,
+			accent: 'accent-normal',
+			icon: 'login',
+			positiveBtn: {
+				title: 'Login'
+			},
+			negativeBtn: {
+				title: 'Cancel'
+			}
+		};
 }

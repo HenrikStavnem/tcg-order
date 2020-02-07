@@ -27,6 +27,8 @@
 	}
 
 	.modal-box {
-		transform: translate(-50%, -50%);
+		@include breakpoint-small {
+			transform: translate(-50%, -50%);
+		}
 	}
 }

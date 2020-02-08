@@ -1,0 +1,8 @@
+// resets standard html elements
+
+input[type=text], input[type=password] {
+	background-color: transparent;
+	border-width: 0px;
+	border-style: none;
+	border-color: transparent;
+}

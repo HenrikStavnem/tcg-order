@@ -34,8 +34,8 @@ function createDialog(type) {
 				<div class='dialog-content'>${dialog.html}</div>
 			</div>
 			<div class='dialog-footer'>
-				${dialog.negativeBtn ? `<button>${dialog.negativeBtn.title}</button>` : ''}
-				${dialog.positiveBtn ? `<button>${dialog.positiveBtn.title}</button>` : ''}
+				${dialog.negativeBtn ? `<button id='btn-negative' data-btn-type='${dialog.negativeBtn.id}' ${dialog.negativeBtn.form ? `form='${dialog.negativeBtn.form}'` : ''}>${dialog.negativeBtn.title}</button>` : ''}
+				${dialog.positiveBtn ? `<button id='btn-positive' data-btn-type='${dialog.positiveBtn.id}' ${dialog.positiveBtn.form ? `form='${dialog.positiveBtn.form}'` : ''}>${dialog.positiveBtn.title}</button>` : ''}
 			</div>
 		</div>`;
 
@@ -45,11 +45,16 @@ function createDialog(type) {
 		closeModal();
 	});
 
-	$( "#login-btn" ).on( "click", function(event) {
-		var username = $( "#login-username-input" ).val(),
-			password = $( "#login-password-input" ).val();
+	$( "#btn-positive, #btn-negative" ).on( "click", function(event) {
+		const type = event.currentTarget.dataset.btnType;
 
-		login(username, password);
+		if (type) {
+			switch(type) {
+				case 'cancel': closeModal(); break;
+				case 'login': login(); break;
+				default: closeModal(); break;
+			}
+		}
 	});
 	
 	openModal();
@@ -59,10 +64,11 @@ function getDialogSettings(type) {
 	let settings = null;
 
 	switch(type) {
-		case 'login':	settings = createLoginDialogSettings(); break;
-		case 'bad-request': settings = {title: '400 Error', html: 'Bad request', accent: 'accent-error'}; break;
-		case 'test':	settings = {title: 'TEST', html: 'EXAMPLE', accent: 'accent-normal'}; break;
-		default:		settings = {title: 'DEFAULT', html: 'NONE', accent: 'accent-normal'}; break;
+		case 'login':		settings = createLoginDialogSettings(); break;
+		case 'auth-failed': settings = createAuthFailedDialogSettings(); break;
+		case 'bad-request':	settings = createBadRequestDialogSettings(); break;
+		case 'test':		settings = {title: 'TEST', html: 'EXAMPLE', accent: 'accent-normal'}; break;
+		default:			settings = {title: 'DEFAULT', html: 'NONE', accent: 'accent-normal'}; break;
 	}
 
 	return settings;
@@ -71,26 +77,58 @@ function getDialogSettings(type) {
 function createLoginDialogSettings() {
 	const title = 'Login',
 		html = `
-		<form action='javascript:void(0);'>
+		<form id='login-form' action='javascript:void(0);'>
 			<label for='login-username-input'>Username</label>
 			<input type='text' id='login-username-input' placeholder='Username' autocomplete='username' autofocus /><br />
 			<label for='login-password-input'>Password</label>
 			<input type='password' id='login-password-input' placeholder='Password' autocomplete='current-password' /><br />
-			<button id='login-btn'>Login</button>
 		</form>`;
-
-		//<button id='login-btn'>Login</button>
 	
-		return {
-			title: title,
-			html: html,
-			accent: 'accent-normal',
-			icon: 'login',
-			positiveBtn: {
-				title: 'Login'
-			},
-			negativeBtn: {
-				title: 'Cancel'
-			}
-		};
+	return {
+		title: title,
+		html: html,
+		accent: 'accent-normal',
+		icon: 'login',
+		positiveBtn: {
+			title: 'Login',
+			id: 'login',
+			form: 'login-form'
+		},
+		negativeBtn: {
+			title: 'Cancel',
+			id: 'cancel'
+		}
+	};
+}
+
+function createAuthFailedDialogSettings() {
+	const title = 'Bad request',
+		html = `<p>The username and password you have entered did not match our records.<br>Please try again.</p>`;
+
+	return {
+		title: title,
+		html: html,
+		accent: 'accent-error',
+		icon: 'login',
+		positiveBtn: {
+			title: 'Okay',
+			id: 'ok'
+		}
+	};
+}
+
+function createBadRequestDialogSettings() {
+	const title = 'Bad request',
+		html = `<p>The system was unable to perfom the desired action.<br>Please try again.</p>`;
+
+	return {
+		title: title,
+		html: html,
+		accent: 'accent-error',
+		icon: 'login',
+		positiveBtn: {
+			title: 'Okay',
+			id: 'ok'
+		}
+	};
 }

@@ -28,7 +28,10 @@ function saveOrder() {
 	);
 }
 
-function login(username, password) {
+function login(event /*username, password*/) {
+	const username = document.querySelector('#login-username-input').value,
+		password = document.querySelector('#login-password-input').value;
+
 	$.post( connection, {
 		call: 'login',
 		username: username,
@@ -38,10 +41,10 @@ function login(username, password) {
 		function( data ) {
 			console.log(data);
 			switch (data) {
-				case '200': doLogin();						break;
-				case '400': createDialog('bad-request');	break;
-				case '401': alert("Wrong password");		break;
-				default: alert("Unknown error");			break;
+				case '200': doLogin();								break;
+				case '400': createDialog('bad-request');			break;
+				case '401': createDialog('auth-failed');	break;
+				default: alert("Unknown error");					break;
 			}
 		}
 	);

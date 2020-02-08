@@ -35,7 +35,7 @@
               $encryptedPassword = encrypt($password, $firstName, $lastName);
           }
 
-          if ($userPassword == $encryptedPassword && $encryptedPassword != "") {
+          if ($userPassword && $userPassword == $encryptedPassword && $encryptedPassword != "") {
               $_SESSION['user_firstname'] = "$firstName";
               $_SESSION['user_id'] = $id;
               $_SESSION['user_avatar'] = "$avatar";

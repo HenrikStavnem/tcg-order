@@ -11,28 +11,9 @@ function createMenu() {
     createFilterSelector();
 }
 
-function createMenuLoginField() {
-    //<div id='filter-selector'></div>
-    var html = `
-        <form action='javascript:void(0);'>
-			<label for='login-username-input'>Username</label>
-            <input type='text' id='login-username-input' placeholder='Username' autocomplete='username' autofocus />
-			<label for='login-password-input'>Password</label>
-            <input type='password' id='login-password-input' placeholder='Password' autocomplete='current-password' />
-            <button id='login-btn'>Login</button>
-        </form>
-	`;
-	
-	html = `<button onClick="createDialog('login')">Login</button>`;
-
-    $('#menu-content-right').html(html);
-
-    $( "#login-btn" ).on( "click", function(event) {
-        var username = $( "#login-username-input" ).val(),
-            password = $( "#login-password-input" ).val();
-
-        login(username, password);
-    });
+function createMenuLoginField() {	
+	const html = `<button onClick="createDialog('login')">Login</button>`;
+	$('#menu-content-right').html(html);
 }
 
 function createMenuLogoutField() {

@@ -18,7 +18,7 @@ gulp.task('scripts', function() {
 		.pipe(babel({
 			presets: ['@babel/env']
 		}))
-		//.pipe(uglify())
+		.pipe(uglify())
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest('./dist/js'))
   });

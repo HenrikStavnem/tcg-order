@@ -45,7 +45,7 @@ function createDialog(type) {
 		closeModal();
 	});
 
-	$( "#btn-positive, #btn-negative" ).on( "click", function(event) {
+	$('#btn-positive, #btn-negative').on( 'click', function(event) {
 		const type = event.currentTarget.dataset.btnType;
 
 		if (type) {
@@ -54,6 +54,22 @@ function createDialog(type) {
 				case 'login': login(); break;
 				default: closeModal(); break;
 			}
+		}
+	});
+
+	$('#modal input').on('focus', function(event){
+		const target = event.target,
+			label = $("label[for='" + $(target).attr('id') + "']");
+
+		$(label).closest('label').addClass('above');
+	});
+
+	$('#modal input').on('blur', function(event){
+		const target = event.target,
+			label = $("label[for='" + $(target).attr('id') + "']");
+
+		if (target.value === '') {
+			$(label).closest('label').removeClass('above');
 		}
 	});
 	
@@ -79,9 +95,9 @@ function createLoginDialogSettings() {
 		html = `
 		<form id='login-form' action='javascript:void(0);'>
 			<label for='login-username-input'>Username</label>
-			<input type='text' id='login-username-input' placeholder='Username' autocomplete='username' autofocus /><br />
+			<input type='text' id='login-username-input' autocomplete='username' autofocus /><br />
 			<label for='login-password-input'>Password</label>
-			<input type='password' id='login-password-input' placeholder='Password' autocomplete='current-password' /><br />
+			<input type='password' id='login-password-input' autocomplete='current-password' /><br />
 		</form>`;
 	
 	return {

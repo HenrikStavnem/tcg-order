@@ -1,3 +1,4 @@
+@import "variables/variables";
 // resets standard html elements
 
 input[type=text], input[type=password] {
@@ -5,4 +6,27 @@ input[type=text], input[type=password] {
 	border-width: 0px;
 	border-style: none;
 	border-color: transparent;
+}
+
+button {
+	text-rendering: auto;
+	color: $color-black;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: center;
+	align-items: flex-start;
+	cursor: default;
+	background-color: transparent;
+	box-sizing: border-box;
+	margin: 0em;
+	font: 400 13.3333px Arial;
+	padding: 1px 6px;
+	border-width: 0px;
+	border-style: none;
+	border-color: transparent;
+	border-image: initial;
 }

@@ -10,6 +10,16 @@
 	left: 0;
 	box-shadow: 0 0 15px 0 $color-black ;
 
+	.auth-failed-label {
+		display: none;
+		font-size: 16px;
+		color: $color-red;
+
+		&.show {
+			display: block;
+		}
+	}
+
 	@include breakpoint-small {
 		position: absolute;
 		top: 50%;
@@ -42,7 +52,10 @@
 		}
 
 		.dialog-icon {
+			color: $color-white;
+			font-size: 25px;
 			font-weight: 900;
+			padding: 0;
 		}
 	}
 
@@ -87,7 +100,7 @@
 					width: 100%;
 					flex-direction: column;
 					align-items: flex-start;
-					transform: translate(10px, 40px);
+					transform: translate(10px, 42px);
 					transform-origin: 0px 0px;
 					transition: all 0.15s linear;
 					pointer-events: none;

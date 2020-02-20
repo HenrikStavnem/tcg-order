@@ -9,6 +9,10 @@ function openModal() {
 		}
 		closeModal();
 	});
+
+	$('#modal').on('authFailed', function() {
+		$('#modal .auth-failed-label').addClass('show');
+	});
 }
 
 function closeModal() {
@@ -98,6 +102,7 @@ function createLoginDialogSettings() {
 			<input type='text' id='login-username-input' autocomplete='username' autofocus /><br />
 			<label for='login-password-input'>Password</label>
 			<input type='password' id='login-password-input' autocomplete='current-password' /><br />
+			<p class='auth-failed-label'>Authentication failed.</p>
 		</form>`;
 	
 	return {
@@ -119,7 +124,7 @@ function createLoginDialogSettings() {
 
 function createAuthFailedDialogSettings() {
 	const title = 'Bad request',
-		html = `<p>The username and password you have entered did not match our records.<br>Please try again.</p>`;
+		html = `<p>The username and password you have entered did not match our records.</p><p>Please try again.</p>`;
 
 	return {
 		title: title,
@@ -135,7 +140,7 @@ function createAuthFailedDialogSettings() {
 
 function createBadRequestDialogSettings() {
 	const title = 'Bad request',
-		html = `<p>The system was unable to perfom the desired action.<br>Please try again.</p>`;
+		html = `<p>The system was unable to perfom the desired action.</p><p>Please try again.</p>`;
 
 	return {
 		title: title,

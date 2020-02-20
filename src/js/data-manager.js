@@ -43,11 +43,16 @@ function login(event /*username, password*/) {
 			switch (data) {
 				case '200': doLogin();								break;
 				case '400': createDialog('bad-request');			break;
-				case '401': createDialog('auth-failed');	break;
+				//case '401': createDialog('auth-failed');			break;
+				case '401': fireAuthFailedEvent();					break;
 				default: alert("Unknown error");					break;
 			}
 		}
 	);
+}
+
+function fireAuthFailedEvent() {
+	$('.dialog').trigger('authFailed');
 }
 
 function doLogin() {

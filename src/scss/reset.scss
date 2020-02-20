@@ -29,4 +29,8 @@ button {
 	border-style: none;
 	border-color: transparent;
 	border-image: initial;
+
+	&:focus {
+		outline: unset;
+	}
 }

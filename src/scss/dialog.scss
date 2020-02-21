@@ -10,16 +10,6 @@
 	left: 0;
 	box-shadow: 0 0 15px 0 $color-black ;
 
-	.auth-failed-label {
-		display: none;
-		font-size: 16px;
-		color: $color-red;
-
-		&.show {
-			display: block;
-		}
-	}
-
 	@include breakpoint-small {
 		position: absolute;
 		top: 50%;
@@ -59,6 +49,16 @@
 		}
 	}
 
+	.error-labels {
+		visibility: hidden;
+		font-size: 16px;
+		color: $color-red;
+
+		&.show {
+			visibility: visible;
+		}
+	}
+
 	.dialog-content-container {
 		display: flex;
 		flex-direction: row;
@@ -67,14 +67,15 @@
 
 		.dialog-content-illustration {
 			display: none;
-			width: 100px;
-			min-width: 100px;
+			width: 150px;
+			min-width: 150px;
 			height: auto;
 			align-items: center;
 			padding: 20px;
+			box-sizing: border-box;
 
 			@include breakpoint-small {
-				display: block;
+				display: flex;
 			}
 
 			div svg {
@@ -102,7 +103,7 @@
 					align-items: flex-start;
 					transform: translate(10px, 42px);
 					transform-origin: 0px 0px;
-					transition: all 0.15s linear;
+					transition: all 0.05s linear;
 					pointer-events: none;
 					font-size: 20px;
 

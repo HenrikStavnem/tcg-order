@@ -32,6 +32,11 @@ function login(event /*username, password*/) {
 	const username = document.querySelector('#login-username-input').value,
 		password = document.querySelector('#login-password-input').value;
 
+	if (!username || !password) {
+		fireMissingCredentialsFieldsEvent();
+		return;
+	}
+
 	$.post( connection, {
 		call: 'login',
 		username: username,
@@ -53,6 +58,10 @@ function login(event /*username, password*/) {
 
 function fireAuthFailedEvent() {
 	$('.dialog').trigger('authFailed');
+}
+
+function fireMissingCredentialsFieldsEvent() {
+	$('.dialog').trigger('missingCredentialFields');
 }
 
 function doLogin() {

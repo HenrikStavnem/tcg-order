@@ -11,7 +11,13 @@ function openModal() {
 	});
 
 	$('#modal').on('authFailed', function() {
-		$('#modal .auth-failed-label').addClass('show');
+		$('#modal .error-labels span').html('Authentication failed.');
+		$('#modal .error-labels').addClass('show');	
+	});
+
+	$('#modal').on('missingCredentialFields', function() {
+		$('#modal .error-labels span').html('Please fill out all fields.');
+		$('#modal .error-labels').addClass('show');
 	});
 }
 
@@ -35,11 +41,13 @@ function createDialog(type) {
 					<use xlink:href="#icon-login" />
 				</svg>
 				</div></div>
-				<div class='dialog-content'>${dialog.html}</div>
-			</div>
-			<div class='dialog-footer'>
-				${dialog.negativeBtn ? `<button id='btn-negative' data-btn-type='${dialog.negativeBtn.id}' ${dialog.negativeBtn.form ? `form='${dialog.negativeBtn.form}'` : ''}>${dialog.negativeBtn.title}</button>` : ''}
-				${dialog.positiveBtn ? `<button id='btn-positive' data-btn-type='${dialog.positiveBtn.id}' ${dialog.positiveBtn.form ? `form='${dialog.positiveBtn.form}'` : ''}>${dialog.positiveBtn.title}</button>` : ''}
+				<div class='dialog-content'>
+					${dialog.html}
+					<div class='dialog-footer'>
+						${dialog.negativeBtn ? `<button id='btn-negative' data-btn-type='${dialog.negativeBtn.id}' ${dialog.negativeBtn.form ? `form='${dialog.negativeBtn.form}'` : ''}>${dialog.negativeBtn.title}</button>` : ''}
+						${dialog.positiveBtn ? `<button id='btn-positive' data-btn-type='${dialog.positiveBtn.id}' ${dialog.positiveBtn.form ? `form='${dialog.positiveBtn.form}'` : ''}>${dialog.positiveBtn.title}</button>` : ''}
+					</div>
+				</div>
 			</div>
 		</div>`;
 
@@ -99,10 +107,12 @@ function createLoginDialogSettings() {
 		html = `
 		<form id='login-form' action='javascript:void(0);'>
 			<label for='login-username-input'>Username</label>
-			<input type='text' id='login-username-input' autocomplete='username' autofocus /><br />
+			<input type='text' id='login-username-input' autocomplete='username' autofocus />
 			<label for='login-password-input'>Password</label>
-			<input type='password' id='login-password-input' autocomplete='current-password' /><br />
-			<p class='auth-failed-label'>Authentication failed.</p>
+			<input type='password' id='login-password-input' autocomplete='current-password' />
+			<p class='error-labels'>
+				<span>&nbsp;</span>
+			</p>
 		</form>`;
 	
 	return {

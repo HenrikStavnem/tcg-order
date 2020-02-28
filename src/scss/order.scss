@@ -1,3 +1,5 @@
+@import "variables/variables";
+
 BODY {
 	background-color: #aaaaaa;
 	background-repeat: no-repeat;
@@ -5,26 +7,36 @@ BODY {
 	background-attachment: fixed;
 	padding-top: 80px;
 	padding-bottom: 400px;
+	margin: 0px;
  
 	text-align: center;
-	min-width: 680px;
+	min-width: $screen-sm-min; //was 680px; //TODO: Fix
 	height: 100%;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 14px;
+
+	@include breakpoint-small {
+		min-width: 680px; //TODO: Fix?
+	}
  }
  
  #page {
 	position: relative;
-	 width: 680px;
-	 min-height: 100%;
-	 height: auto;
-	 text-align: center;
-	 margin-left: auto;
-	 margin-right: auto;
-	 padding: 10px;
- 
-	background-color: white;
+	width: $screen-sm-min;
+	min-height: 100%;
+	height: auto;
+	text-align: center;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 10px; 
+	background-color: $color-white;
 	box-shadow:0 0px 20px rgba(0, 0, 0, 1);
+
+	@include breakpoint-small {
+		width: 680px;//$screen-md-min; TODO: Should this be like breakpoint?
+		margin-left: auto;
+		margin-right: auto;
+	}
  }
  
  #table {
@@ -52,11 +64,11 @@ BODY {
  }
  
  .table-row.hidden {
-	 display: none;
+	display: none;
  }
  
  .table-row:nth-child(even) {
-	 background-color: #dddddd;
+	background-color: #dddddd;
  }
  
  .table-cell {
@@ -64,7 +76,7 @@ BODY {
 	margin: 5px;
 	padding: 10px;
 	font-size: 25px;
-	font-family: 'Roboto Condensed', sans-serif;
+	font-family: $font-roboto-condensed;
 	line-height: 25px;
 	vertical-align: middle;
 	text-align: center;
@@ -81,71 +93,70 @@ BODY {
 	height: 40px;
 	background-size: cover;
 	background-position: center;
- }
- .user-cell.duke {
+}
+.user-cell.duke {
 	background-image: url("../../res/user-images/duke.png");
- }
- .user-cell.hunter {
+}
+.user-cell.hunter {
 	background-image: url("../../res/user-images/hunter.png");
- }
- .user-cell.jolly {
+}
+.user-cell.jolly {
 	background-image: url("../../res/user-images/jolly.png");
- }
- .user-cell.red {
+}
+.user-cell.red {
 	background-image: url("../../res/user-images/red.png");
- }
- 
- .user-image {
+}
+
+.user-image {
 	width: 50px;
- }
- 
- .thumb-container {
+}
+
+.thumb-container {
 	position: relative;
 	height: 100px;
 	width: 72px;
 	overflow: hidden;
- }
- 
- .card-thumb {
-	height: 100px;
-	cursor: grab;
- }
- 
- .red-tooltip {
-	position: absolute;
- }
- .ui-helper-hidden-accessible {
-	display:none;
- }
- 
- .number-input {
-	width: 100px;
-	background-color: #a0d7d7;
- }
- .number-input-left {
-	float: left;
- }
- .number-input-left INPUT {
-	width: 50px;
-	height: 95px;
-	text-align: center;
-	font-size: 25px;
+}
+
+.card-thumb {
+height: 100px;
+cursor: grab;
+}
+
+.red-tooltip {
+position: absolute;
+}
+.ui-helper-hidden-accessible {
+display:none;
+}
+
+.number-input {
+width: 100px;
+background-color: #a0d7d7;
+}
+.number-input-left {
+float: left;
+}
+.number-input-left INPUT {
+width: 50px;
+height: 95px;
+text-align: center;
+font-size: 25px;
+font-family: 'Roboto Condensed', sans-serif;
+}
+.number-input-right {
+float: left;
+padding-left: 5px;
+}
+.number-input-right INPUT {
+width: 30px;
+height: 50px;
+}
+
+.small {
+font-size: 18px;
+}
+
+#login-username-input {
 	font-family: 'Roboto Condensed', sans-serif;
- }
- .number-input-right {
-	float: left;
-	padding-left: 5px;
- }
- .number-input-right INPUT {
-	width: 30px;
-	height: 50px;
- }
- 
- .small {
-	font-size: 18px;
- }
- 
- #login-username-input {
-	 font-family: 'Roboto Condensed', sans-serif;
- }
- 
+}

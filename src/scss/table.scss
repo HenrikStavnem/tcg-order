@@ -1,0 +1,73 @@
+@import "variables/variables";
+
+#table {
+	display: flex;
+	flex-direction: column;
+
+	.table-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		&:nth-child(even) {
+			.table-cell {
+				background-color: #dddddd;
+			}
+		}
+
+		&.hidden {
+			display: none;
+		}
+
+		&.user-row {
+			position: sticky;
+			top: 55px;
+			z-index: $zindex-sticky-row;
+			background-color: $color-white;
+		}
+
+		&.total-row {
+			position: sticky;
+			bottom: 0px;
+			z-index: $zindex-sticky-row;
+			background-color: $color-white;
+		}
+
+		.table-cell {
+			flex: 1 1;
+			flex-grow: 1;
+
+			background-color: #eeeeee;
+
+			margin: 2px;
+			padding: 10px;
+			font-size: 25px;
+			font-family: $font-roboto-condensed;
+			line-height: 25px;
+			vertical-align: middle;
+			text-align: center;
+			border-radius: 10px;
+			width: 70px;
+			overflow: hidden;
+
+			&.user-cell {
+				height: 40px;
+				background-size: cover;
+				background-position: center;
+
+				&.duke {
+					background-image: url("../../res/user-images/duke.png");
+				}
+				&.hunter {
+					background-image: url("../../res/user-images/hunter.png");
+				}
+				&.jolly {
+					background-image: url("../../res/user-images/jolly.png");
+				}
+				&.red {
+					background-image: url("../../res/user-images/red.png");
+				}
+			}
+		}
+	}
+}

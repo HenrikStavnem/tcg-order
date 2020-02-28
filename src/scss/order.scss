@@ -38,7 +38,14 @@ BODY {
 		margin-right: auto;
 	}
  }
+
+ h1 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+ }
  
+ /*
  #table {
 	display: table;
  
@@ -51,16 +58,11 @@ BODY {
  #card-cells {
 	float: left;
  }
- 
- h1 {
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 24px;
-	font-weight: normal;
- }
+
  
  .table-row {
 	display: table-row;
-	background-color: #eeeeee; 
+	background-color: #eeeeee;
  }
  
  .table-row.hidden {
@@ -110,6 +112,7 @@ BODY {
 .user-image {
 	width: 50px;
 }
+*/
 
 .thumb-container {
 	position: relative;

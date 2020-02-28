@@ -7,7 +7,7 @@ function createTable() {
 }
 
 function createTableHtml() {
-    var html = '';
+   var html = '';
 
    html = html + '<div id="table">';
 
@@ -23,13 +23,13 @@ function createTableHtml() {
 }
 
 function createTableHeaders() {
-   var html = '';
+	var html = '';
 
-   html = html + `
-      <div class="table-row">
-         <div class="table-cell"></div>
-         <div class="table-cell"></div>
-   `;
+	html = html + `
+		<div class="table-row user-row">
+			<div class="table-cell"></div>
+			<div class="table-cell"></div>
+	`;
 
    users.forEach(function(user) {
       html = html + `
@@ -157,7 +157,7 @@ function createTableRow(categoryId, cardId) {
 function createTableFooter() {
    var html = `
       <h1>Total</h1>
-      <div class="table-row">
+      <div class="table-row total-row">
          <div class="table-cell"></div>
          <div class="table-cell"></div>
    `;

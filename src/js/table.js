@@ -27,20 +27,20 @@ function createTableHeaders() {
 
 	html = html + `
 		<div class="table-row user-row">
-			<div class="table-cell"></div>
-			<div class="table-cell"></div>
+			<div class="table-cell short"></div>
+			<div class="table-cell short"></div>
 	`;
 
    users.forEach(function(user) {
       html = html + `
-         <div class="table-cell user-cell ${user.image}">
+         <div class="table-cell short user-cell ${user.image}">
          </div>`;
 
          //<img src='user-images/${user.image}' title='${user.name}' class='user-image' />
    });
 
    html = html + `
-         <div class="table-cell">Total</div>
+         <div class="table-cell short">Total</div>
       </div>
    `;
 
@@ -69,45 +69,49 @@ function createCategoryHeadline(categoryName) {
 }
 
 function createTableRow(categoryId, cardId) {
-   var html = '',
-       cellCategoryId,
-       cellCardId,
-       cellCardImage,
-       cellCardOriginImage,
-       cellCardOriginUrl,
-       cellCardSet,
-       rowId;
+	var html = '',
+		cellCategoryId,
+		cellCardId,
+		cellCardImage,
+		cellCardOriginImage,
+		cellCardOriginUrl,
+		cellCardSet,
+		rowId,
+		isWide = false,
+		isOriginWide = false;
 
-   // Getting values
-   cards.forEach( function(category) {
-       if (category.id === categoryId) {
-           cellCategoryId = category.id;
+	// Getting values
+	cards.forEach( function(category) {
+		if (category.id === categoryId) {
+			cellCategoryId = category.id;
 
-         category.cards.forEach( function(card) {
-            if (card.id === cardId) {
-               cellCardId = card.id;
-               cellCardImage = card.image;
-               cellCardOriginImage = card.originImage;
-               cellCardOriginUrl = card.originUrl;
-               cellCardSet = card.set ? card.set : 0;
-            }
-            return;
-         });
-         return;
-      }
-   });
+			category.cards.forEach( function(card) {
+				if (card.id === cardId) {
+					cellCardId = card.id;
+					cellCardImage = card.image;
+					cellCardOriginImage = card.originImage;
+					cellCardOriginUrl = card.originUrl;
+					cellCardSet = card.set ? card.set : 0;
+					isWide = (card.isWide);
+					isOriginWide = (card.originIsWide);
+				}
+				return;
+			});
+		return;
+		}
+	});
 
-   rowId = "row-" + cellCategoryId + "-" + cellCardId;
+	rowId = "row-" + cellCategoryId + "-" + cellCardId;
+	let wideCls = isWide ? "wide" : "",
+		originWideCls = isOriginWide ? "wide" : "nope";
 
-   html = html + `<div class="table-row" id="row-${rowId}" data-set=${cellCardSet}>`;
+	html = html + `<div class="table-row" id="row-${rowId}" data-set=${cellCardSet}>`;
 
-   html = html + `
-      <div class="table-cell">
-         <div class='thumb-container'>
-            <img src='card-images/${cellCardImage}' alt='Missing image' class='card-thumb' id='card-thumb-${cellCategoryId}-${cellCardId}' title='.' />
-         </div>
-      </div>
-   `;
+	html = html + `
+		<div class="table-cell thumb-container">
+			<img src='card-images/${cellCardImage}' alt='Missing image' class='card-thumb ${wideCls}' id='card-thumb-${cellCategoryId}-${cellCardId}' title='.' />
+		</div>
+	`;
 
    if (cellCardOriginImage !== undefined) {
       if (false /*cellCardOriginUrl !== undefined */)
@@ -115,26 +119,24 @@ function createTableRow(categoryId, cardId) {
             <div class="table-cell">
                <div class='thumb-container'>
                   <a href='${cellCardOriginUrl}'>
-                     <img src='${cellCardOriginImage}' alt='Missing image' class='card-thumb' id='card-origin-thumb-${cellCategoryId}-${cellCardId}' title='Nej' />
+                     <img src='${cellCardOriginImage}' alt='Missing image' class='card-thumb' id='card-origin-thumb-${cellCategoryId}-${cellCardId}' title='Card' />
                   </a>
                </div>
             </div>
          `;
       else {
-         html = html + `
-            <div class="table-cell">
-               <div class='thumb-container'>
-                  <img src='${cellCardOriginImage}' alt='Missing image' class='card-thumb' id='card-origin-thumb-${categoryId}-${cardId}' title='Maaske' />
-               </div>
-            </div>
-         `;
-      }
-   }
-   else {
-      html = html + `
-         <div class="table-cell"></div>
-      `;
-   }
+		html = html + `
+			<div class="table-cell thumb-container">
+				<img src='${cellCardOriginImage}' alt='Missing image' class='card-thumb ${originWideCls}' id='card-origin-thumb-${categoryId}-${cardId}' title='Relative card' />
+			</div>
+			`;
+		}
+	}
+	else {
+		html = html + `
+			<div class="table-cell"></div>
+		`;
+	}
 
    users.forEach(function(user) {
       html = html + `<div id='${categoryId}-${cardId}-${user.id}' class="table-cell">`;
@@ -156,18 +158,18 @@ function createTableRow(categoryId, cardId) {
 
 function createTableFooter() {
    var html = `
-      <h1>Total</h1>
-      <div class="table-row total-row">
-         <div class="table-cell"></div>
-         <div class="table-cell"></div>
-   `;
+		<h1>Total</h1>
+		<div class="table-row total-row">
+			<div class="table-cell short"></div>
+			<div class="table-cell short"></div>
+	`;
 
    users.forEach(function(user) {
-      html = html + `<div class="table-cell" id="total-user-${user.id}">0</div>`;
+		html = html + `<div class="table-cell short" id="total-user-${user.id}">0</div>`;
    });
 
    html = html + `
-         <div class="table-cell" id='total-total'>0</div>
+         <div class="table-cell short" id='total-total'>0</div>
       </div>
    `;
 

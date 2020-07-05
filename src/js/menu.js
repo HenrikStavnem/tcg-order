@@ -1,14 +1,14 @@
 function createMenu() {
-    var html = `
-        <div id='menu-content-left'><div id='filter-selector'></div></div>
-        <div id='menu-content-right'></div>
-    `;
+	var html = `
+		<div id='menu-content-left'><div id='filter-selector'></div></div>
+		<div id='menu-content-right'></div>
+	`;
 
-    $('#menu').html(html);
+	$('#menu').html(html);
 
-    createMenuLoginField(); // TODO: Move?
+	createMenuLoginField(); // TODO: Move?
 
-    createFilterSelector();
+	createFilterSelector();
 }
 
 function createMenuLoginField() {	
@@ -17,34 +17,28 @@ function createMenuLoginField() {
 }
 
 function createMenuLogoutField() {
-   var userName,
-       userImg,
-       greeting = createGreeting();
+	var userName,
+		userImg,
+		greeting = createGreeting();
 
-   users.forEach(function (user) {
-      if (user.id === loggedInUserId) {
-         userName = user.name;
-         userImg = user.image;
-      }
-   });
+	users.forEach(function (user) {
+	if (user.id === loggedInUserId) {
+		userName = user.name;
+		userImg = user.image;
+	}
+});
 
-   var html = `
-      <img src='res/user-images/${userImg}' alt='' class='menu-user-image' /> ${greeting} ${userName} <button id='logout-btn'>Logout</button>
-   `;
+var html = `
+	<img src='res/user-images/${userImg}' alt='' class='menu-user-image' /> <span class='menu-greeting'>${greeting} ${userName}</span> <button id='logout-btn'>Logout</button>
+`;
 
-   $('#menu-content-right').html(html);
+$('#menu-content-right').html(html);
 
-   $( "#logout-btn" ).on( "click", function(event) {
-      logout();
-   });
-
-   /*
-   <div>
-       <div id='filter-selector'></div>
-   </div>
-   */
+$("#logout-btn" ).on("click", function() {
+	logout();
+});
 }
 
 function createGreeting() {
-   return "Greetings,";
+return "Greetings,";
 }

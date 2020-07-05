@@ -69,4 +69,11 @@
 		vertical-align: middle;
 		display: inline-block;
 	}
+
+	.menu-greeting {
+		display: none;
+		@include breakpoint-medium {
+			display: inline;
+		}
+	}
 }

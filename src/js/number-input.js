@@ -6,7 +6,7 @@ function createNumberInputField(value, categoryId, cardId, userId) {
          </div>
 
          <div class='number-input-right'>
-            <input class='input-add-btn' type='button' id='input-${categoryId}-${cardId}-${userId}-add-btn' value='+' /><br />
+            <input class='input-add-btn' type='button' id='input-${categoryId}-${cardId}-${userId}-add-btn' value='+' />
             <input class='input-sub-btn' type='button' id='input-${categoryId}-${cardId}-${userId}-sub-btn' value='-' />
          </div>
       </div>`;

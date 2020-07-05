@@ -5,24 +5,27 @@ var cards = [
       cards: [
          {
             id: 1,
-            image: '1-001.png',
+			image: '1-001.png',
+			isWide: false,
             text: 'Play only if you control a Mount.<br />The next time your hero would be dealt fatal damage this turn, it is dealt damage until it has 1 remaining health instead.',
             textBg: 'spell',
-            set: 1
+			set: 1
          },
          {
             id: 2,
-            image: '1-002.png',
+			image: '1-002.png',
+			isWide: false,
             text: 'Your hero heals target hero or ally 4 damage for each totem you control.',
             textBg: 'spell',
-            set: 2
+			set: 2
          },
          {
             id: 3,
             image: '1-003.png',
             text: '<b>Ongoing:</b> Your Chain Heal and Greater Chain Heal abilites heal double the amount instead.<br />Pay 2, destroy this ability {arrow}<br />Search your graveyard for an ability named Chain Heal or Greater Chain Heal and put it into your hand.',
             textBg: 'spell',
-            originImage: 'card-images/refs/ch_gch.png',
+			originImage: 'card-images/refs/ch_gch.png',
+			originIsWide: true,
             set: 1
          },
          {
@@ -172,21 +175,24 @@ var cards = [
       cards: [
          {
             id: 1,
-            image: '1-023.png',
+			image: '1-023.png',
+			isWide: true,
             text: 'Pay 2 {arrow} Flip Azhera.',
             textBack: 'When you complete a quest, Azhera may heal 3 damage from target hero or ally.',
             textBg: 'alliance'
          },
          {
             id: 2,
-            image: '1-024.png',
+			image: '1-024.png',
+			isWide: true,
             text: 'Once per turn: Pay 1 {arrow} Flip Czalonar. If Czalonar would deal nature damage this turn, he deals that much +1 instead.',
             textBack: 'Once per turn: Pay 1 {arrow} Flip Czalonar. If Czalonar would deal arcane damage this turn, he deals that much +1 instead.',
             textBg: 'alliance'
          },
          {
             id: 3,
-            image: '1-025.png',
+			image: '1-025.png',
+			isWide: true,
             text: 'Pay 2 {arrow} Flip Elyria.',
             textBack: 'When you complete a quest, pay 1 less to play your next arcane ability this turn.',
             textBg: 'alliance'
@@ -1140,7 +1146,6 @@ var cards = [
          {
             id: 33,
             image: 'tokens/twilight-dragonkin.png',
-            text: '<b>Twilight Dragonkin</b>',
             textBg: 'neutral',
             originImage: 'card-images/refs/twilight-citadel.png',
             originUrl: 'http://wow.tcgbrowser.com/#!/cardid=4207'

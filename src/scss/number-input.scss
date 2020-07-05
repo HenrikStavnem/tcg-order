@@ -1,0 +1,33 @@
+@import "variables/variables";
+
+.number-input {
+	width: 100px;
+	background-color: #a0d7d7;
+}
+.number-input-left {
+	float: left;
+}
+.number-input-left INPUT {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	font-size: 20px;
+	font-family: $font-roboto-condensed;
+	background-color: $color-white;
+
+	@include breakpoint-small {
+		height: 90px;
+		font-size: 25px;
+	}
+}
+.number-input-right {
+	//float: left;
+	display: flex;
+	flex-direction: column;
+	padding-left: 5px;
+	justify-content: space-between;
+}
+.number-input-right INPUT {
+	width: 30px;
+	height: 50px;
+}

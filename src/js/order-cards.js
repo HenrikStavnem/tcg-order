@@ -318,7 +318,6 @@ var cards = [
             textBack: 'At the end of your turn, you may ready target resource.',
             textBg: 'alliance'
          },
-         /*
          {
             id: 21,
             image: '1-043.png',
@@ -327,7 +326,6 @@ var cards = [
             textBg: 'alliance',
             originImage: 'card-images/tokens/the-polly-pirate.png',
          },
-         */
          {
             id: 22,
             image: '1-044.png',

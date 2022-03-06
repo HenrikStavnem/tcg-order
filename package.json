@@ -1,0 +1,32 @@
+{
+  "name": "tcg-order",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenrikStavnem/tcg-order.git"
+  },
+  "author": "Henrik Stavnem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenrikStavnem/tcg-order/issues"
+  },
+  "homepage": "https://github.com/HenrikStavnem/tcg-order#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "del": "^6.0.0",
+    "sass": "^1.49.9"
+  }
+}

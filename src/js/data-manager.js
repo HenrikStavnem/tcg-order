@@ -1,12 +1,12 @@
-var 	connection = "src/php/db.php";
+var connection = "src/php/db.php";
 
 function getOrders() {
-   $.post( connection, {
+	$.post( connection, {
 		call: 'getOrders'
 	} )
-    .done(
+	.done(
 		function( data ) {
-         updateTableCellsData(data);
+			updateTableCellsData(data);
 		}
 	);
 }

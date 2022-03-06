@@ -1,3 +1,5 @@
+@import "variables/variables";
+
 BODY {
 	background-color: #aaaaaa;
 	background-repeat: no-repeat;
@@ -41,6 +43,7 @@ BODY {
  }
  
  h1 {
+	color: black;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 24px;
 	font-weight: normal;
@@ -48,15 +51,15 @@ BODY {
  
  .table-row {
 	display: table-row;
-	background-color: #eeeeee; 
- }
- 
- .table-row.hidden {
-	 display: none;
- }
- 
- .table-row:nth-child(even) {
-	 background-color: #dddddd;
+	background-color: $color-gray-light;
+
+	&:nth-child(even) {
+		background-color: $color-gray;
+	}
+
+	&.hidden {
+		display: none;
+	}
  }
  
  .table-cell {

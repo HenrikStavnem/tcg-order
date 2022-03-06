@@ -54,7 +54,7 @@ function createTableContent() {
         var categoryId = category.id,
             cards = category.cards;
 
-        html = html + createCategoryHeadline(category.name);;
+        html = html + createCategoryHeadline(category.name);
 
         cards.forEach(function(card) {
             html = html + createTableRow(categoryId, card.id);

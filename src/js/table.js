@@ -124,7 +124,7 @@ function createTableRow(categoryId, cardId) {
          html = html + `
             <div class="table-cell">
                <div class='thumb-container'>
-                  <img src='${cellCardOriginImage}' alt='Missing image' class='card-thumb' id='card-origin-thumb-${categoryId}-${cardId}' title='Maaske' />
+                  <img src='${cellCardOriginImage}' alt='Missing image' class='card-thumb' id='card-origin-thumb-${categoryId}-${cardId}' title=''/>
                </div>
             </div>
          `;
